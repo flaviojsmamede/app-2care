@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_28_153425) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_28_154036) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,6 +25,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_153425) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["resident_id"], name: "index_family_members_on_resident_id"
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.boolean "send_status"
+    t.bigint "resident_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["resident_id"], name: "index_reports_on_resident_id"
   end
 
   create_table "residents", force: :cascade do |t|
@@ -54,5 +62,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_153425) do
   end
 
   add_foreign_key "family_members", "residents"
+  add_foreign_key "reports", "residents"
   add_foreign_key "residents", "users"
 end
