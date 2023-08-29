@@ -1,1 +1,10 @@
-<h1>Isto é um card</h1>
+<div class="card-resident">
+  <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" />
+  <div class="card-resident-infos">
+    <h4><%= resident.first_name.capitalize %> <%= resident.last_name.capitalize %></h4>
+    <p><%= resident.clinical_info.capitalize %></p>
+  </div>
+  <div class="card-resident-icon">
+    <i class="fa-solid fa-file-pen"></i>
+  </div>
+</div>
