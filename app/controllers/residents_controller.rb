@@ -6,14 +6,15 @@ class ResidentsController < ApplicationController
   end
 
   def new
+    @users = User.all
     @resident = Resident.new
   end
 
   def create
-    @resident = resident.new(resident_params)
+    @resident = Resident.new(resident_params)
 
     if @resident.save
-      redirect_to @resident, notice: "resident was successfully created."
+      redirect_to residents_path, notice: "resident was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,6 +31,6 @@ class ResidentsController < ApplicationController
   end
 
   def resident_params
-    params.require(:resident).permit(:first_name, :last_name, photos: [])
+    params.require(:resident).permit(:first_name, :last_name, :birth_date, :clinical_info, :photo, :user_id)
   end
 end
