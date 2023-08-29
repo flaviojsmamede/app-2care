@@ -1,0 +1,44 @@
+.card-resident {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  width: 350px;
+  height: 100px;
+  border-radius: 12px;
+  background: $white;
+  box-shadow: 0px 5px 5px 0px rgba(0, 156, 170, 0.20);
+}
+
+.card-resident img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-resident h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-resident p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-resident .card-resident-infos {
+  padding: 16px;
+}
+
+.card-resident h4 {
+  color: $blue;
+}
+
+.card-resident-icon {
+  color: $blue;
+  font-size: 3rem;
+  margin-right: 1rem;
+}
