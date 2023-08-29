@@ -1,16 +1,9 @@
 .main-navbar {
-  // display: flex;
-  // justify-content: space-between;
-  padding: 40px 25px 0px 0px;
+  display: flex;
+  padding: 40px 0px 25px 0px;
   height: 100px;
   width: 100%;
-  // justify-content: center;
   align-items: center;
-  // width: 390px;
-  // padding-bottom: 0px;
-  // flex-direction: column;
-  // gap: 5px;
-  // flex-shrink: 0;
   background-color: $blue-2;
   border-radius: 0px 0px 10px 10px;
 }
@@ -21,21 +14,20 @@ i {
   color: $white;
 }
 
-.fa-arrow-left {
-  margin-left: 5%;
-}
-
-.fa-xmark {
-  margin-right: 5%;
-}
-
 .logo {
-  // width: 133.475px;
-  // height: 30px;
-  // position: relative;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  // top: 40px;
-  // text-align: center;
+}
+
+.icon-div-left {
+  width: 50px;
+  height: 30px;
+  text-align: right;
+}
+
+.icon-div-right {
+  width: 50px;
+  height: 30px;
+  text-align: left;
 }
