@@ -1,0 +1,26 @@
+.main-navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0% 5%;
+  height: 100px;
+  width: 100%;
+  // justify-content: center;
+  // align-items: center;
+  // width: 390px;
+  // padding-bottom: 0px;
+  // flex-direction: column;
+  // gap: 5px;
+  // flex-shrink: 0;
+  background-color: $blue-2;
+  border-radius: 0px 0px 10px 10px;
+}
+
+i {
+  font-size: 30px;
+  color: $white;
+}
+
+.logo {
+  width: 133.475px;
+  height: 30px;
+}
