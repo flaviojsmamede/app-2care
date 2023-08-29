@@ -1,11 +1,11 @@
 .main-navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 0% 5%;
+  // display: flex;
+  // justify-content: space-between;
+  padding: 40px 25px 0px 0px;
   height: 100px;
   width: 100%;
   // justify-content: center;
-  // align-items: center;
+  align-items: center;
   // width: 390px;
   // padding-bottom: 0px;
   // flex-direction: column;
@@ -15,12 +15,27 @@
   border-radius: 0px 0px 10px 10px;
 }
 
+
 i {
   font-size: 30px;
   color: $white;
 }
 
+.fa-arrow-left {
+  margin-left: 5%;
+}
+
+.fa-xmark {
+  margin-right: 5%;
+}
+
 .logo {
-  width: 133.475px;
-  height: 30px;
+  // width: 133.475px;
+  // height: 30px;
+  // position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  // top: 40px;
+  // text-align: center;
 }
