@@ -1,0 +1,35 @@
+.main-navbar {
+  display: flex;
+  padding: 40px 0px 25px 0px;
+  height: 100px;
+  width: 100%;
+  align-items: center;
+  background-color: $blue-2;
+  border-radius: 0px 0px 10px 10px;
+}
+
+
+i {
+  font-size: 30px;
+  color: $white;
+}
+
+.navbar-text {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: $white;
+  font: $body-font;
+}
+
+.icon-div-left {
+  width: 50px;
+  height: 30px;
+  text-align: right;
+}
+
+.icon-div-right {
+  width: 50px;
+  height: 30px;
+  text-align: left;
+}
