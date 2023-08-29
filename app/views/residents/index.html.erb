@@ -1,1 +1,5 @@
 <h2>Index</h2>
+
+<% @residents.each do |resident| %>
+  <%= render "resident_card", resident: resident %>
+<% end %>
