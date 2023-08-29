@@ -2,19 +2,26 @@
 .homepage-content {
   text-align: center;
   color: #F4F4F4;
-  font-family:  "Nunito", "Helvetica", "sans-serif";
+  font-family: "Nunito", "Helvetica", "sans-serif";
   font-weight: bold;
 }
 
-.background {
-  background-image: asset-url('image_homepage.png');
+.image_background {
+  background-image: asset-url('background_homepage.png');
   background-size: cover;
   background-position: center;
-  height: 200px;
+  background-color: rgba(0, 156, 170, 0.40);
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh
+
 }
 
-#logo {
-  width: 
-  align-items: ;
+.logo {
+  align-items: center;
+  color: #F4F4F4;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+  font-size: large;
+  font-weight: 400;
 }

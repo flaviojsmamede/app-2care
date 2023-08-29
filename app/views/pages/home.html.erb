@@ -1,19 +1,11 @@
 
-<div class="container">
 
-  <div style="background-image: url ('<%= image_path "app/assets/background_homepage.png" %>')>
-</div>
+<div class="image_background" style="background-image: url('<%= image_path "background_homepage.png" %>')">
 
-
-
-    <div class= "logo_content">
-
-
-    <p>Keeping families informed</p>
-
-    </div>
-
-
-
+  <div class= "logo">
+    <%= image_tag "logo2care.png" %>
+    <h2>Keeping families informed</h2>
+    <%= link_to 'Get started', root_path, class:'btn btn-primary' %>
+  </div>
 
 </div>
