@@ -1,5 +1,13 @@
 <h2>Index</h2>
+<div class="container">
+  <div class="row">
+    <% @residents.each do |resident| %>
+        <%= link_to resident_path(resident) do %>
+          <div class="col mb-2">
+            <%= render "resident_card", resident: resident %>
+          </div>
+      <% end %>
+    <% end %>
+  </div>
 
-<% @residents.each do |resident| %>
-  <%= render "resident_card", resident: resident %>
-<% end %>
+</div>

@@ -2,16 +2,20 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  width: 350px;
-  height: 100px;
+  justify-content: space-between;
   border-radius: 12px;
   background: $white;
   box-shadow: 0px 5px 5px 0px rgba(0, 156, 170, 0.20);
 }
 
+.flex-card{
+  height: 12vh;
+}
+
 .card-resident img {
   height: 100%;
-  width: 120px;
+  width: 20vw;
+  //min-width: 40%;
   object-fit: cover;
 }
 
@@ -31,9 +35,13 @@
 
 .card-resident .card-resident-infos {
   padding: 16px;
+  display: flex;
+  align-items: center;
+
 }
 
 .card-resident h4 {
+  font-size: 1rem;
   color: $blue;
 }
 
@@ -41,4 +49,10 @@
   color: $blue;
   font-size: 3rem;
   margin-right: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
 }
