@@ -1,1 +1,27 @@
 // Specific CSS for your home-page
+.homepage-content {
+  text-align: center;
+  color: #F4F4F4;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+  font-weight: bold;
+}
+
+.image_background {
+  background-image: asset-url('background_homepage.png');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 156, 170, 0.40);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh
+
+}
+
+.logo {
+  align-items: center;
+  color: #F4F4F4;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+  font-size: large;
+  font-weight: 400;
+}
