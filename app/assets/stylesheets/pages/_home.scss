@@ -22,9 +22,6 @@
   font-family: $body-font;
   font-size: large;
   font-weight: 400;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
 }
 
 .dashboard-info-container img {
@@ -37,14 +34,13 @@
 
 
 .btn {
-  // justify-content: center;
-  // align-items: center;
   font-family: $body-font;
   color: #0693A7;
   font-weight: 600;
   background-color:#F4F4F4;
   // width: 266px;
   display: block;
+  border-radius: 6px;
 }
 
 body {
