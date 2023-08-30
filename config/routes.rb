@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get 'dashboard', to: 'pages#dashboard'
   resources :residents do
-    resources :reports
+    resources :reports, only: [:index, :create]
   end
 end

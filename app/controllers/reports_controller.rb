@@ -3,19 +3,19 @@ class ReportsController < ApplicationController
 
   def index
     @reports = Report.all
-  end
-
-  def new
     @report = Report.new
+    @resident = Resident.find(params[:resident_id])
+
   end
 
   def create
-    @report = Report.new(set_report)
-
+    @resident = Resident.find(params[:resident_id])
+    @report = Report.new
+    @report.resident = @resident
     if @report.save
-      redirect_to residents_path, notice: "report was successfully created."
+      redirect_to resident_reports_path(@resident), notice: "report was successfully created."
     else
-      render :new, status: :unprocessable_entity
+      render "reports/index", status: :unprocessable_entity
     end
   end
 
@@ -24,9 +24,4 @@ class ReportsController < ApplicationController
   def set_report
     @report = Report.find(params[:id])
   end
-
-  def report_params
-    params.require(:report).permit(:send_status, :resident_id)
-  end
-
 end
