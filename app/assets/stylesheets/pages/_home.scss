@@ -14,17 +14,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh
-
+  height: 100vh,
 }
 
-.logo {
-  align-items: center;
+.dashboard-info-container {
   color: #F4F4F4;
   font-family: "Nunito", "Helvetica", "sans-serif";
   font-size: large;
   font-weight: 400;
-  align-self: center;
 }
 
 
@@ -35,6 +32,6 @@
   color:#0693A7;
   font-weight: bolder;
   background-color:#F4F4F4;
-  width: 60wv;
-
+  display: block;
+  width: 100%;
 }
