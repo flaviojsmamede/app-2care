@@ -12,14 +12,15 @@
   </head>
 
   <body>
-    <%= render "shared/main-navbar" %>
-    <%# devise flash messages %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div class="row justify-content-center div-margin-top">
-      <div class="col-10">
+    <% if controller_name == "pages" && action_name == "home" %>
         <%= yield %>
-      </div>
-    </div>
+      <% else %>
+      <%= render "shared/main-navbar" %>
+        <div class="row justify-content-center div-margin-top">
+          <div class="col-10">
+            <%= yield %>
+          </div>
+        </div>
+    <% end %>
   </body>
 </html>

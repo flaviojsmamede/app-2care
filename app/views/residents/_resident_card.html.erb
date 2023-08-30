@@ -1,10 +1,20 @@
 <div class="card-resident">
-  <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" />
-  <div class="card-resident-infos">
-    <h4><%= resident.first_name.capitalize %> <%= resident.last_name.capitalize %></h4>
-    <p><%= resident.clinical_info.capitalize %></p>
+  <div class="flex-card d-flex">
+    <% if resident.photo.attached? %>
+      <%= cl_image_tag resident.photo.key, crop: :fill %>
+    <% else %>
+      <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", crop: :fill %>
+    <% end %>
+    <div class="card-resident-infos">
+      <div>
+        <h2><%= resident.first_name.capitalize %></h2>
+        <p><%= resident.clinical_info.capitalize %></p>
+      </div>
+    </div>
   </div>
   <div class="card-resident-icon">
-    <i class="fa-solid fa-file-pen"></i>
+    <%= link_to "" do %>
+      <i class="fa-solid fa-file-pen"></i>
+    <% end %>
   </div>
 </div>

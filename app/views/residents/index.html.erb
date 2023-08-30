@@ -1,5 +1,14 @@
-<h2>Index</h2>
+<h1 class="page-title">Residents</h1>
 
-<% @residents.each do |resident| %>
-  <%= render "resident_card", resident: resident %>
-<% end %>
+<div class="">
+  <div class="row">
+    <% @residents.each do |resident| %>
+        <%= link_to resident_path(resident) do %>
+          <div class="col mb-3">
+            <%= render "resident_card", resident: resident %>
+          </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<%= render "shared/menu-bar" %>
