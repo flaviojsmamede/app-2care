@@ -14,15 +14,16 @@
 
 .tabs .tab {
   padding: 4px;
-  // margin: 4px;
+  margin: 4px;
   cursor: pointer;
   text-decoration: none;
-  border-top: 4px solid transparent;
+  border-top: 3px solid transparent;
 
-  a {
-    text-decoration: none;
+  p {
     color: $gray;
     opacity: 0.85;
+    margin: 0;
+    padding: 0;
   }
   i{
     color: $gray;
@@ -35,10 +36,11 @@
   border-top: 3px solid $blue-2;
   border-radius: 3px;
 
-  a {
-    text-decoration: none;
+  p {
     color: $blue-2;
     opacity: 1;
+    margin: 0;
+    padding: 0;
   }
   i{
     color: $blue-2;
