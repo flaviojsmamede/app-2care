@@ -2,7 +2,7 @@
 .homepage-content {
   text-align: center;
   color: #F4F4F4;
-  font-family: "Nunito", "Helvetica", "sans-serif";
+  font-family: $body-font;
   font-weight: bold;
 }
 
@@ -19,20 +19,31 @@
 
 .dashboard-info-container {
   color: #F4F4F4;
-  font-family: "Nunito", "Helvetica", "sans-serif";
+  font-family: $body-font;
   font-size: large;
   font-weight: 400;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+}
+
+.dashboard-info-container img {
+  margin-bottom: 1vh;
+}
+
+.dashboard-info-container h3 {
+  margin-bottom: 3vh;
 }
 
 
 .btn {
-  justify-content: center;
-  align-items: center;
-  font-family: 'Inter', sans-serif;
+  // justify-content: center;
+  // align-items: center;
+  font-family: $body-font;
   color: #0693A7;
-  font-weight: bolder;
+  font-weight: 600;
   background-color:#F4F4F4;
-  width: 266px;
+  // width: 266px;
   display: block;
 }
 
