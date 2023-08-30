@@ -1,0 +1,46 @@
+.profile-card {
+  overflow: hidden;
+  border-radius: 12px;
+  background: $white;
+}
+
+.card-height{
+  height: 20vh;
+}
+
+.profile-card img {
+  height: 100%;
+  width: 20vw;
+  object-fit: cover;
+  position: relative;
+  left: 0;
+}
+
+.profile-card h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.profile-card p {
+  opacity: .7;
+  margin-bottom: 0;
+  font-family: $body-font;
+}
+
+.blue-text {
+  color: $blue;
+  font-size: 14px;
+  font-family: $body-font;
+}
+
+.grey-text {
+  color: $gray;
+  font-size: 12px;
+  font-family: $body-font;
+}
+
+.profile-card .profile-card-infos {
+  text-align: center;
+  margin-right: 5%;
+}

@@ -29,9 +29,13 @@
   justify-content: center;
   align-items: center;
   font-family: 'Inter', sans-serif;
-  color:#0693A7;
+  color: #0693A7;
   font-weight: bolder;
   background-color:#F4F4F4;
+  width: 266px;
   display: block;
-  width: 100%;
+}
+
+body {
+  background-color: $light-blue;
 }

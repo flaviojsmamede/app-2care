@@ -3,7 +3,7 @@
     <%= cl_image_tag resident.photo.key, crop: :fill %>
     <div class="card-resident-infos">
       <div>
-        <h4><%= resident.first_name.capitalize %> <%= resident.last_name.capitalize %></h4>
+        <h2><%= resident.first_name.capitalize %></h2>
         <p><%= resident.clinical_info.capitalize %></p>
       </div>
     </div>

@@ -1,1 +1,22 @@
-<h1>This is a card</h1>
+<div class="profile-card">
+  <div class="card-height d-flex justify-content-between align-items-center">
+    <div>
+      <%= cl_image_tag resident.photo.key, crop: :fill %>
+    </div>
+    <div class="profile-card-infos">
+      <div>
+        <h3><%= resident.first_name.capitalize %> <%= resident.last_name.capitalize %></h3>
+      </div>
+      <div class="d-flex flex-row justify-content-between">
+        <div>
+          <p class="grey-text">Birthday</p>
+          <p class="blue-text"><%= resident.birth_date %></p>
+        </div>
+        <div>
+          <p class="grey-text">Clinical info</p>
+          <p class="blue-text"><%= resident.clinical_info.capitalize %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
