@@ -2,7 +2,7 @@
 .homepage-content {
   text-align: center;
   color: #F4F4F4;
-  font-family: "Nunito", "Helvetica", "sans-serif";
+  font-family: $body-font;
   font-weight: bold;
 }
 
@@ -14,27 +14,38 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh
-
+  height: 100vh,
 }
 
-.logo {
-  align-items: center;
+.dashboard-info-container {
   color: #F4F4F4;
-  font-family: "Nunito", "Helvetica", "sans-serif";
+  font-family: $body-font;
   font-size: large;
   font-weight: 400;
-  align-self: center;
+}
+
+.dashboard-info-container img {
+  margin-bottom: 1vh;
+}
+
+.dashboard-info-container h3 {
+  margin-bottom: 3vh;
 }
 
 
 .btn {
-  justify-content: center;
-  align-items: center;
-  font-family: 'Inter', sans-serif;
-  color:#0693A7;
-  font-weight: bolder;
+  font-family: $body-font;
+  color: #0693A7;
+  font-weight: 600;
   background-color:#F4F4F4;
-  width: 60wv;
+  // width: 266px;
+  display: block;
+  border-radius: 6px;
+  width: 266px;
+  height: 50px;
+  padding: 4%;
+}
 
+body {
+  background-color: $light-blue;
 }

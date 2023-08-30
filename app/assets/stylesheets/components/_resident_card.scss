@@ -15,12 +15,11 @@
 .card-resident img {
   height: 100%;
   width: 20vw;
-  //min-width: 40%;
   object-fit: cover;
 }
 
 .card-resident h2 {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
   margin: 0;
 }
@@ -48,9 +47,10 @@
 .card-resident-icon {
   color: $blue;
   font-size: 3rem;
-  margin-right: 2rem;
+  margin-right: 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 a {

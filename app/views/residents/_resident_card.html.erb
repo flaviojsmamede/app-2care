@@ -1,9 +1,13 @@
 <div class="card-resident">
   <div class="flex-card d-flex">
-    <%= cl_image_tag resident.photo.key, crop: :fill %>
+    <% if resident.photo.attached? %>
+      <%= cl_image_tag resident.photo.key, crop: :fill %>
+    <% else %>
+      <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", crop: :fill %>
+    <% end %>
     <div class="card-resident-infos">
       <div>
-        <h4><%= resident.first_name.capitalize %> <%= resident.last_name.capitalize %></h4>
+        <h2><%= resident.first_name.capitalize %></h2>
         <p><%= resident.clinical_info.capitalize %></p>
       </div>
     </div>
