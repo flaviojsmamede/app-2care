@@ -14,9 +14,13 @@
   <body>
     <%= render "shared/main-navbar" %>
     <div class="row justify-content-center div-margin-top">
-      <div class="col-10">
+      <% if controller_name == "pages" && action_name == "home" %>
         <%= yield %>
-      </div>
+      <% else %>
+        <div class="col-10">
+          <%= yield %>
+        </div>
+      <% end %>
     </div>
   </body>
 </html>
