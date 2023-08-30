@@ -7,7 +7,9 @@
 <%# TODO: The name needs to be dynamic with the resident's first name %>
        <h2 class="navbar-text">Antonio's Report</h2>
     <% else %>
-      <%= image_tag "logo2care.png", alt: "logo 2 care", class: "logo" %>
+      <%= link_to dashboard_path, class: "logo" do %>
+        <%= image_tag "logo2care.png", alt: "logo 2 care", class: "logo" %>
+      <% end %>
     <% end %>
 <%# TODO: this icon only appears on the report creation and it will LINK to a modal %>
 <%# to confirm if the user really wants to leave the report %>

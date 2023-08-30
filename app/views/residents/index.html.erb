@@ -1,8 +1,10 @@
-<div class="container">
+<h1 class="page-title">Residents</h1>
+
+<div class="">
   <div class="row">
     <% @residents.each do |resident| %>
         <%= link_to resident_path(resident) do %>
-          <div class="col mb-2">
+          <div class="col mb-3">
             <%= render "resident_card", resident: resident %>
           </div>
       <% end %>
