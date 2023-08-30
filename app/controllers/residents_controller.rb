@@ -22,6 +22,7 @@ class ResidentsController < ApplicationController
 
   def show
     @resident = Resident.find(params[:id])
+    @report = Report.new
   end
 
   private
