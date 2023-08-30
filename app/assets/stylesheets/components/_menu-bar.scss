@@ -1,0 +1,43 @@
+.menu-bar{
+  background-color: $light-blue;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.tabs{
+  display: flex;
+  align-items: center;
+}
+
+.tabs .tab {
+  padding: 4px;
+  margin: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  border-top: 4px solid transparent;
+  a {
+    text-decoration: none;
+    color: $gray;
+  }
+  i{
+    color: $gray;
+  }
+}
+
+.tabs .tab.active{
+  opacity: 1;
+  border-top: 3px solid $blue-2;
+
+  a {
+    text-decoration: none;
+    color: $blue-2;
+  }
+  i{
+    color: $blue-2;
+  }
+
+}
+
