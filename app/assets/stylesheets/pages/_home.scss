@@ -7,7 +7,7 @@
 }
 
 .image_background {
-  background-image: asset-url('background_homepage.png');
+  background-image: asset-url('new_background_homepage.png');
   background-size: cover;
   background-position: center;
   background-color: rgba(0, 156, 170, 0.40);
@@ -24,4 +24,17 @@
   font-family: "Nunito", "Helvetica", "sans-serif";
   font-size: large;
   font-weight: 400;
+  align-self: center;
+}
+
+
+.btn {
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  color:#0693A7;
+  font-weight: bolder;
+  background-color:#F4F4F4;
+  width: 60wv;
+
 }
