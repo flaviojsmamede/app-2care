@@ -16,8 +16,10 @@
       <%= yield %>
     <% else %>
       <%= render "shared/main-navbar" %>
-        <div class="auth">
-          <%= yield %>
+        <div class="row justify-content-center div-margin-top">
+          <div class="col-10 mb-5 pb-5">
+            <%= yield %>
+          </div>
         </div>
       <%= render "shared/menu-bar" %>
     <% end %>
