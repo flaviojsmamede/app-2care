@@ -33,17 +33,14 @@
 }
 
 
-.btn {
+.white-button {
   font-family: $body-font;
-  color: #0693A7;
+  color: $blue-2;
   font-weight: 600;
-  background-color:#F4F4F4;
-  // width: 266px;
-  display: block;
-  border-radius: 6px;
-  width: 266px;
-  height: 50px;
+  background-color: $white;
+  border-radius: 10px;
   padding: 4%;
+  text-align: center;
 }
 
 body {

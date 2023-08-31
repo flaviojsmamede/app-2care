@@ -4,8 +4,44 @@
   <h1 class="page-title">Dashboard</h1>
 </div>
 
-<%= link_to 'New report', root_path, class:'button-primary-2care' %>
-<%= link_to 'Click me!', root_path, class:'button-secondary-2care' %>
-<%= link_to 'My residents', residents_path, class:'btn-primary-2care' %>
+<%= link_to residents_path do %>
+  <div class="d-flex justify-content-around profile-card p-3 mb-3 align-items-center">
+    <%= image_tag("grandma-illustration.png", alt: "grandma illustration")  %>
+    <div class="d-flex flex-column align-items-center profile-card-info">
+      <h5>Residents</h5>
+      <h1><%= Resident.count %></h1>
+    </div>
+  </div>
+<% end %>
+
+<h3 class="blue-text">Yesterday's average results:</h3>
+
+<div class="d-flex flex-row gap-3 align-items-center mb-3">
+  <div class="white-button d-flex flex-row align-items-center justify-content-around profile-card-info flex-grow-1 card-info-green">
+    <h2>0/<%= Resident.count %></h2>
+    <i class="fa-regular fa-face-smile big-icon"></i>
+  </div>
+  <div class="white-button d-flex flex-row align-items-center justify-content-around profile-card-info flex-grow-1 card-info-red">
+    <h2>0/<%= Resident.count %></h2>
+    <i class="fa-regular fa-face-frown big-icon"></i>
+  </div>
+</div>
+
+<h3 class="blue-text">Today: </h3>
+
+<%= link_to residents_path do %>
+  <div class="d-flex justify-content-around profile-card p-3 mb-3 align-items-center">
+    <div class="d-flex flex-column align-items-center profile-card-info">
+      <h5>Reports done</h5>
+
+      <% @reports = Report.all %>
+      <% reports_sent = @reports.select { |report| report.send_status == true } %>
+
+
+      <h1><%= reports_sent.count %>/<%= Resident.count %></h1>
+    </div>
+    <%= image_tag("reports-illustration.png", alt: "reports illustration")  %>
+  </div>
+<% end %>
 
 <%= render "shared/menu-bar" %>
