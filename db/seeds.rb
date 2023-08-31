@@ -55,24 +55,24 @@ option21 = Option.create(name: "medium", category: category7)
 option22 = Option.create(name: "bad", category: category7)
 
 care_taker1 = User.create(email: "flavio@gmailcom", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
-resident1 = Resident.create(user_id: care_taker1.id, first_name: "Jose", last_name: "coultinho", birth_date: "15/04/1963", clinical_info: "diabetc")
+resident1 = Resident.create(user_id: care_taker1.id, first_name: "nuno", last_name: "cassandra", birth_date: "15/04/1963", clinical_info: "diabetc", photography: "nuno.png" )
 report1 = Report.create(resident_id: resident1.id)
 report_category1 = ReportCategory.create(category: category4, report: report1, result: option10.name)
 
 
 care_taker2 = User.create(email: "ana@gmailcom", password: "123456", first_name: "ana", last_name: "almeida", role: "care taker")
-resident2 = Resident.create(user_id: care_taker2.id, first_name: "armindo", last_name: "matias", birth_date: "15/04/1963", clinical_info: "diabetc")
+resident2 = Resident.create(user_id: care_taker2.id, first_name: "armindo", last_name: "matias", birth_date: "15/04/1963", clinical_info: "diabetc", photography: "armindo.png")
 report2 = Report.create(resident_id: resident2.id)
 report_category2 = ReportCategory.create(category: category1, report: report2, result: option1.name)
 
 
 care_taker3 = User.create(email: "nuno@gmailcom", password: "123456", first_name: "flavio", last_name: "cassandro", role: "care taker")
-resident3 = Resident.create(user_id: care_taker3.id, first_name: "luana", last_name: "pereira", birth_date: "15/04/1963", clinical_info: "diabetc")
+resident3 = Resident.create(user_id: care_taker3.id, first_name: "luana", last_name: "pereira", birth_date: "15/04/1963", clinical_info: "diabetc", photography: "luana.png")
 report3 = Report.create(resident_id: resident3.id)
 report_category3 = ReportCategory.create(category: category5, report: report3, result: option16.name)
 
 
 care_taker4 = User.create(email: "rodrigo@gmailcom", password: "123456", first_name: "flavio", last_name: "coelho", role: "care taker")
-resident4 = Resident.create(user_id: care_taker4.id, first_name: "antonio", last_name: "quaresma", birth_date: "15/04/1963", clinical_info: "diabetc")
+resident4 = Resident.create(user_id: care_taker4.id, first_name: "antonio", last_name: "quaresma", birth_date: "15/04/1963", clinical_info: "diabetc", photography: "antonio.png")
 report4 = Report.create(resident_id: resident4.id)
 report_category3 = ReportCategory.create(category: category7, report: report4, result: option20.name)
