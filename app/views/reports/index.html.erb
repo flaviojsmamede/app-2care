@@ -1,5 +1,3 @@
 <% @reports.each do |report| %>
   <p><%= report.created_at %></p>
 <% end %>
-
-<%= render "form_report", report: @report, resident: @resident %>

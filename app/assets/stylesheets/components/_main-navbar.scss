@@ -6,10 +6,7 @@
   align-items: center;
   background-color: $blue-2;
   border-radius: 0px 0px 10px 10px;
-  margin-bottom: 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: sticky;
   box-shadow: 0px 4px 4px 0px rgba(0, 156, 170, 0.20);
   z-index: 10;
 }
