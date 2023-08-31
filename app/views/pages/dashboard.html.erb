@@ -6,28 +6,46 @@
 
 <div class="d-flex justify-content-around profile-card p-3 mb-3 align-items-center">
   <%= image_tag("grandma-illustration.png", alt: "grandma illustration")  %>
-  <div class="d-flex flex-column align-items-center">
+  <div class="d-flex flex-column align-items-center profile-card-info">
     <h5>Residents</h5>
-    <h1>20</h1>
+    <h1><%= Resident.count %></h1>
   </div>
 </div>
 
-<h3 class="blue-text">To do: </h3>
+<h3 class="blue-text">Yesterday's average results: </h3>
+
+<div class="d-flex flex-row gap-3 align-items-center mb-3">
+  <div class="btn d-flex flex-row align-items-center justify-content-around profile-card-info">
+    <h2>0/<%= Resident.count %></h2>
+    <i class="fa-regular fa-face-smile big-icon"></i>
+  </div>
+  <div class="btn d-flex flex-row align-items-center justify-content-around profile-card-info">
+    <h2>0/<%= Resident.count %></h2>
+    <i class="fa-regular fa-face-frown big-icon"></i>
+  </div>
+</div>
+
+
+
+<h3 class="blue-text">To send: </h3>
 
 <div class="d-flex justify-content-around profile-card p-3 mb-3 align-items-center">
-  <div class="d-flex flex-column align-items-center">
+  <div class="d-flex flex-column align-items-center profile-card-info">
     <h5>Reports</h5>
-    <h1>3/20</h1>
+
+    <% @reports = Report.all %>
+    <% reports_not_sent = @reports.select { |report| report.send_status == false } %>
+    <% if reports_not_sent.count > Resident.count %>
+      <% reports_to_send = Resident.count %>
+    <% else %>
+      <% reports_to_send = reports_not_sent.count %>
+    <% end %>
+
+    <h1><%= reports_to_send %>/<%= Resident.count %></h1>
   </div>
   <%= image_tag("reports-illustration.png", alt: "reports illustration")  %>
 </div>
 
 
 <%= link_to 'My residents', residents_path, class:'button-primary-2care' %>
-
-
-<%= link_to 'New report', root_path, class:'button-primary-2care' %>
-<%= link_to 'Click me!', root_path, class:'button-secondary-2care' %>
-
-
 <%= render "shared/menu-bar" %>

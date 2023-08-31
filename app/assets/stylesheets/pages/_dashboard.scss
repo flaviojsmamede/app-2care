@@ -12,9 +12,18 @@
 .profile-card-info h1 {
   color: $blue-2;
   font-family: $body-font;
-  font-size: 50px;
+  font-size: 45px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   margin-bottom: 0;
+}
+
+.profile-card-info h2 {
+  margin-bottom: 0;
+}
+
+
+.big-icon {
+  font-size: 25px;
 }
