@@ -5,7 +5,6 @@
     <% @residents.each do |resident| %>
         <%= link_to resident_path(resident) do %>
           <div class="col mb-3">
-          <%# raise %>
             <%= render "resident_card", resident: resident %>
           </div>
       <% end %>
