@@ -1,16 +1,10 @@
 .button-secondary-2care {
-justify-content: center;
-align-items: center;
-font-family: 'Inter', sans-serif;
-font-size: 16px;
-font-weight: bold;
-color: #F4F4F4;
-font-weight: bolder;
-background-color: #0693A7;
-border-radius: 8px;
-border: 1px;
-width: 73px;
-height: 19px;
-padding: 15px; gap: 10px;
-display: flex;
+  font-family: $body-font;
+  color: $blue-2;
+  font-weight: 600;
+  border: 1px solid $blue-2;
+  border-radius: 10px;
+  padding: 4%;
+  justify-content: center;
+  display: flex;
 }

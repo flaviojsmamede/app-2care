@@ -1,15 +1,10 @@
 .button-primary-2care {
+  font-family: $body-font;
+  color: $white;
+  font-weight: 600;
+  background-color: $blue-2;
+  border-radius: 10px;
+  padding: 4%;
   justify-content: center;
-  align-items: center;
-  font-family: 'Inter', sans-serif;
-  color: #F4F4F4;
-  font-weight: bolder;
-  background-color: #0693A7;
-  border-radius: 8px;
-  border: 1px;
-  width: 350px;
-  height: 40px;
-  padding: 15px;
-  gap: 10px;
   display: flex;
 }
