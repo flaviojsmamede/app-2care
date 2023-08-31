@@ -13,12 +13,13 @@
 
   <body>
     <% if controller_name == "pages" && action_name == "home" %>
-        <%= yield %>
-      <% else %>
+      <%= yield %>
+    <% else %>
       <%= render "shared/main-navbar" %>
         <div class="auth">
           <%= yield %>
         </div>
+      <%= render "shared/menu-bar" %>
     <% end %>
     <%= render "shared/flashes" %>
   </body>

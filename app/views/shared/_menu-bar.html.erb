@@ -1,22 +1,26 @@
-<% if controller_name == "pages" && action_name == "dashboard" %>
+<div class="menu-bar">
 
-  <%= render "shared/menu-bar-dashboard" %>
+  <% if controller_name == "pages" && action_name == "dashboard" %>
 
-<% elsif controller_name == "residents" && action_name == "index" %>
+    <%= render "shared/menu-bar-dashboard" %>
 
-  <%= render "shared/menu-bar-residents" %>
+  <% elsif controller_name == "residents" && action_name == "index" %>
 
-<% elsif controller_name == "" && action_name == "" %>
+    <%= render "shared/menu-bar-residents" %>
 
-  <%= render "shared/menu-bar-chat" %>
+  <% elsif controller_name == "" && action_name == "" %>
+
+    <%= render "shared/menu-bar-chat" %>
 
 
-<% elsif controller_name == "" && action_name == "" %>
+  <% elsif controller_name == "" && action_name == "" %>
 
-  <%= render "shared/menu-bar-account" %>
+    <%= render "shared/menu-bar-account" %>
 
-<% else %>
+  <% else %>
 
-  <%= render "shared/menu-bar-default" %>
+    <%= render "shared/menu-bar-default" %>
 
-<% end %>
+  <% end %>
+
+</div>
