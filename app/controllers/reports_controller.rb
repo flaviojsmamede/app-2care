@@ -5,7 +5,10 @@ class ReportsController < ApplicationController
     @reports = Report.all
     @report = Report.new
     @resident = Resident.find(params[:resident_id])
+  end
 
+  def show
+    @report = Report.find(params[:id])
   end
 
   def create
@@ -13,7 +16,7 @@ class ReportsController < ApplicationController
     @report = Report.new
     @report.resident = @resident
     if @report.save
-      redirect_to resident_reports_path(@resident), notice: "report was successfully created."
+      redirect_to new_report_report_category_path(@report), notice: "report was successfully created."
     else
       render "reports/index", status: :unprocessable_entity
     end
