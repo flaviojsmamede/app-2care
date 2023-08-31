@@ -4,10 +4,30 @@
   <h1 class="page-title">Dashboard</h1>
 </div>
 
-<%= link_to 'New report', root_path, class:'button-primary-2care' %>
-<%= link_to 'Click me!', root_path, class:'button-secondary-2care' %>
+<div class="d-flex justify-content-around profile-card p-3 mb-3">
+  <%= image_tag("grandma-dashboard.png", alt: "grandma illustration")  %>
+  <div class="d-flex flex-column align-items-center">
+    <h5>Residents</h5>
+    <h1>20</h1>
+  </div>
+</div>
+
+<h3 class="blue-text">To do: </h3>
+
+<div class="d-flex justify-content-around profile-card p-3 mb-3">
+  <div class="d-flex flex-column align-items-center">
+    <h5>Residents</h5>
+    <h1>20</h1>
+  </div>
+  <%= image_tag("grandma-dashboard.png", alt: "grandma illustration")  %>
+</div>
 
 
 <%= link_to 'My residents', residents_path, class:'button-primary-2care' %>
+
+
+<%= link_to 'New report', root_path, class:'button-primary-2care' %>
+<%= link_to 'Click me!', root_path, class:'button-secondary-2care' %>
+
 
 <%= render "shared/menu-bar" %>
