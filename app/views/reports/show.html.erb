@@ -1,7 +1,22 @@
-<div class="page-title">
-  <h2><%= @report.created_at %></h2>
-  <% @report.report_categories.each do |report_category| %>
-  <p><%= link_to report_category.category.name, report_report_category_path(@report, report_category) %></p>
-  <p><%= report_category.result %></p>
-  <% end %>
+<div class="text-center report-form">
+  <div class="mb-5">
+    <h1 class="page-title">Daily Report</h1>
+    <h4><%= @report.created_at.strftime('%e') + @report.created_at.strftime('th %B %Y') %></h4>
+  </div>
+    <% @report.report_categories.each do |report_category| %>
+    <div class="d-flex justify-content-between align-items-center report-border mb-2">
+
+        <% case  report_category.result%>
+          <% when "good" %>
+            <h2><%= link_to report_category.category.name, report_report_category_path(@report, report_category), class:"text-success" %></h2>
+            <h2><i class="fa-regular fa-face-smile text-success"></i></h2>
+          <% when "medium" %>
+            <h2><%= link_to report_category.category.name, report_report_category_path(@report, report_category), class:"text-warning" %></h2>
+            <h2><i class="fa-regular fa-face-meh text-warning"></i></h2>
+          <% when "bad" %>
+            <h2><%= link_to report_category.category.name, report_report_category_path(@report, report_category), class:"text-danger" %></h2><%= link_to report_category.category.name, report_report_category_path(@report, report_category), class:"text-danger" %>
+            <h2><i class="fa-regular fa-face-frown text-danger"></i></h2>
+        <% end %>
+    </div>
+    <% end %>
 </div>
