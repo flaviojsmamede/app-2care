@@ -23,6 +23,7 @@ class ResidentsController < ApplicationController
   def show
     @resident = Resident.find(params[:id])
     @report = Report.new
+    @user = current_user
   end
 
   private
