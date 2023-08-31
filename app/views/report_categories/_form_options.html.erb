@@ -1,0 +1,10 @@
+<%= simple_form_for @report_category do |f| %>
+   <div class="mb-3 text-white">
+    <%= f.input :result, collection: Category.find(@category.id).options.pluck(:name), include_blank: false %>
+    <%= f.error :result %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class:"button-primary-2care" %>
+  </div>
+<% end %>
