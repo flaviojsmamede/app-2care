@@ -1,7 +1,7 @@
 .page-title {
   color: $blue-2;
   font-family: $body-font;
-  font-size: 40px;
+  font-size: 35px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -19,8 +19,24 @@
   margin-bottom: 0;
 }
 
-.profile-card-info h2 {
-  margin-bottom: 0;
+.profile-card-info h5 {
+  color: $dark-blue;
+}
+
+.card-info-green {
+  color: $green;
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.card-info-red {
+  color: $red;
+
+  h2 {
+    margin-bottom: 0;
+  }
 }
 
 
