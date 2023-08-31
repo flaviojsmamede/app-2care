@@ -1,0 +1,6 @@
+<div class="page-title">
+  <h2><%= @report.created_at %></h2>
+  <% @report.categories.each do |category| %>
+    <p><%= category.name %></p>
+  <% end %>
+</div>
