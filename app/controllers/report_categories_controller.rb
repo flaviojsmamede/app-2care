@@ -18,7 +18,7 @@ class ReportCategoriesController < ApplicationController
     @report_category = ReportCategory.new(report_categories_params)
     @report_category.report = @report
     if @report_category.save
-      redirect_to report_report_category_path(@report, @report_category), notice: "Report Category was successfully created."
+      redirect_to report_report_category_path(@report, @report_category)
     else
       render :new, status: :unprocessable_entity
     end

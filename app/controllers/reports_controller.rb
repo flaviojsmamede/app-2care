@@ -16,7 +16,7 @@ class ReportsController < ApplicationController
     @report = Report.new
     @report.resident = @resident
     if @report.save
-      redirect_to new_report_report_category_path(@report), notice: "report was successfully created."
+      redirect_to new_report_report_category_path(@report)
     else
       render "reports/index", status: :unprocessable_entity
     end

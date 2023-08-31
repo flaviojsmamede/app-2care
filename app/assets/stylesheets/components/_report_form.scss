@@ -6,16 +6,30 @@
   flex-direction: column;
 }
 
-
 .report-border {
-  display: flex;
-  width: 239px;
+  width: 240px;
   height: 60px;
   padding: 15px 20px;
-  justify-content: space-between;
-  align-items: center;
   border-radius: 10px;
-  border: 1px solid var(--green, #8E9F4E);
-  background: var(--white, #FBFCFF);
+  background: $white;
   box-shadow: 0px 5px 5px 0px rgba(142, 159, 78, 0.20);
+  border: 2px solid $green;
+}
+
+.option-1 {
+  color: $green;
+  border-color: $green;
+  font-size: 28px;
+}
+
+.option-2 {
+  color: $yellow;
+  border-color: $yellow;
+  font-size: 28px;
+}
+
+.option-3 {
+  color: $red;
+  border-color: $red;
+  font-size: 28px;
 }
