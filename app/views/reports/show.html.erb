@@ -1,6 +1,7 @@
 <div class="page-title">
   <h2><%= @report.created_at %></h2>
-  <% @report.categories.each do |category| %>
-    <p><%= category.name %></p>
+  <% @report.report_categories.each do |report_category| %>
+  <p><%= link_to report_category.category.name, report_report_category_path(@report, report_category) %></p>
+  <p><%= report_category.result %></p>
   <% end %>
 </div>

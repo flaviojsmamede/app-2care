@@ -1,0 +1,16 @@
+<%= simple_form_for [report_category,report] do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+   <div class="mb-3 text-white ">
+    <%= f.input :result %>
+    <%= f.input :additional_informations %>
+    <%= f.input :additional_informations %>
+    <%= f.input :category_id %>
+    <%= f.association :movie%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

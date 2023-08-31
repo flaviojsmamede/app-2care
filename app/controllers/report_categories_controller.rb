@@ -3,6 +3,11 @@ class ReportCategoriesController < ApplicationController
     @report_categories = ReportCategory.all
   end
 
+  def show
+    @report_category = ReportCategory.find(params[:id])
+    @category = @report_category.category
+  end
+
   def new
     @report = Report.find(params[:report_id])
     @report_category = ReportCategory.new
@@ -11,8 +16,6 @@ class ReportCategoriesController < ApplicationController
   def create
     @report = Report.find(params[:report_id])
     @report_category = ReportCategory.new(report_categories_params)
-    @options = Option.where(category_id: params[:report_category][:category_id])
-    raise
     @report_category.report = @report
     if @report_category.save
       redirect_to report_path(@report), notice: "Report Category was successfully created."
@@ -21,9 +24,18 @@ class ReportCategoriesController < ApplicationController
     end
   end
 
+  def update
+    @report_category = ReportCategory.find(params[:id])
+    if @report_category.update(report_categories_params)
+      redirect_to new_report_report_category_path(@report_category.report)
+    else
+      render "report_categories/show"
+    end
+  end
+
   private
 
   def report_categories_params
-    params.require(:report_category).permit(:category_id)
+    params.require(:report_category).permit(:result, :category_id)
   end
 end
