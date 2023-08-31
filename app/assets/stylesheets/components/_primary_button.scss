@@ -1,14 +1,22 @@
 .button-primary-2care {
-  justify-content: center;
-  align-items: center;
+  // justify-content: center;
+  // align-items: center;
+  // font-family: $body-font;
+  // font-size: 16px;
+  // color: #F4F4F4;
+  // font-weight: bolder;
+  // border: 1px solid $blue-2;
+  // background-color: $blue-2;
+  // border-radius: 10px;
+  // padding: 15px; gap: 10px;
+  // display: flex;
+
   font-family: $body-font;
-  font-size: 16px;
-  color: #F4F4F4;
-  font-weight: bolder;
-  border: 1px solid $blue-2;
+  color: $white;
+  font-weight: 600;
   background-color: $blue-2;
   border-radius: 10px;
-  height: 40px;
-  padding: 15px; gap: 10px;
+  padding: 4%;
+  justify-content: center;
   display: flex;
 }
