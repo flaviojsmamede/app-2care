@@ -9,3 +9,8 @@
 <%= link_to 'My residents', residents_path, class:'btn-primary-2care' %>
 
 <%= render "shared/menu-bar" %>
+
+
+<div data-controller="alert">
+  <%= link_to 'Click me!', root_path, class:'button-secondary-2care', data:{action: "click->alert#initSweetalert"} %>
+</div>
