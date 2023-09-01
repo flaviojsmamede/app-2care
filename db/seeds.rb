@@ -73,12 +73,10 @@ resident2 = Resident.create(user_id: care_taker2.id, first_name: "armindo", last
 report2 = Report.create(resident_id: resident2.id)
 report_category2 = ReportCategory.create(category: category1, report: report2, result: option1.name)
 
-
 care_taker3 = User.create(email: "nuno@gmailcom", password: "123456", first_name: "flavio", last_name: "cassandro", role: "care taker")
 resident3 = Resident.create(user_id: care_taker3.id, first_name: "luana", last_name: "pereira", birth_date: "15/04/1963", clinical_info: "allergies", photography: "luana.png")
 report3 = Report.create(resident_id: resident3.id)
 report_category3 = ReportCategory.create(category: category5, report: report3, result: option16.name)
-
 
 care_taker4 = User.create(email: "rodrigo@gmailcom", password: "123456", first_name: "flavio", last_name: "coelho", role: "care taker")
 resident4 = Resident.create(user_id: care_taker4.id, first_name: "antonio", last_name: "quaresma", birth_date: "15/04/1963", clinical_info: "blind", photography: "antonio.png")
@@ -90,39 +88,39 @@ resident5 = Resident.create(user_id: care_taker5.id, first_name: "margarida", la
 report5 = Report.create(resident_id: resident5.id)
 report_category3 = ReportCategory.create(category: category7, report: report5, result: option20.name)
 
-care_taker5 = User.create(email: "julia@gmailcom", password: "123456", first_name: "julia", last_name: "coelho", role: "care taker")
-resident6 = Resident.create(user_id: care_taker5.id, first_name: "beatriz", last_name: "vieira", birth_date: "15/04/1963", clinical_info: "diabetes", photography: "beatriz.png")
+care_taker6 = User.create(email: "julia@gmailcom", password: "123456", first_name: "julia", last_name: "coelho", role: "care taker")
+resident6 = Resident.create(user_id: care_taker6.id, first_name: "beatriz", last_name: "vieira", birth_date: "15/04/1963", clinical_info: "diabetes", photography: "beatriz.png")
 report6 = Report.create(resident_id: resident6.id)
 report_category3 = ReportCategory.create(category: category7, report: report6, result: option20.name)
 
-care_taker5 = User.create(email: "julia@gmailcom", password: "123456", first_name: "julia", last_name: "coelho", role: "care taker")
-resident7 = Resident.create(user_id: care_taker5.id, first_name: "flavio", last_name: "mamede", birth_date: "15/04/1963", clinical_info: "allergies", photography: "flavio.png")
+care_taker7 = User.create(email: "julia@gmailcom", password: "123456", first_name: "julia", last_name: "coelho", role: "care taker")
+resident7 = Resident.create(user_id: care_taker7.id, first_name: "flavio", last_name: "mamede", birth_date: "15/04/1963", clinical_info: "allergies", photography: "flavio.png")
 report7 = Report.create(resident_id: resident7.id)
 report_category3 = ReportCategory.create(category: category7, report: report7, result: option20.name)
 
-care_taker5 = User.create(email: "julia@gmailcom", password: "123456", first_name: "julia", last_name: "coelho", role: "care taker")
-resident8 = Resident.create(user_id: care_taker5.id, first_name: "elidiane", last_name: "bezerra", birth_date: "15/04/1963", clinical_info: "back pain", photography: "elidiane.png")
+care_taker8 = User.create(email: "julia@gmailcom", password: "123456", first_name: "julia", last_name: "coelho", role: "care taker")
+resident8 = Resident.create(user_id: care_taker8.id, first_name: "elidiane", last_name: "bezerra", birth_date: "15/04/1963", clinical_info: "back pain", photography: "elidiane.png")
 report8 = Report.create(resident_id: resident8.id)
 report_category3 = ReportCategory.create(category: category7, report: report8, result: option20.name)
 
-care_taker5 = User.create(email: "julia@gmailcom", password: "123456", first_name: "julia", last_name: "coelho", role: "care taker")
-resident9 = Resident.create(user_id: care_taker5.id, first_name: "kenneth", last_name: "stuen", birth_date: "15/04/1963", clinical_info: "allergies", photography: "ken.png")
-report9= Report.create(resident_id: resident9.id)
+care_taker9 = User.create(email: "julia@gmailcom", password: "123456", first_name: "julia", last_name: "coelho", role: "care taker")
+resident9 = Resident.create(user_id: care_taker9.id, first_name: "kenneth", last_name: "stuen", birth_date: "15/04/1963", clinical_info: "deaf", photography: "ken.png")
+report9 = Report.create(resident_id: resident9.id)
 report_category3 = ReportCategory.create(category: category7, report: report9, result: option20.name)
 
-care_taker5 = User.create(email: "julia@gmailcom", password: "123456", first_name: "julia", last_name: "coelho", role: "care taker")
-resident10 = Resident.create(user_id: care_taker5.id, first_name: "maria", last_name: "azfal", birth_date: "15/04/1963", clinical_info: "diabetes", photography: "maria.png")
-report10= Report.create(resident_id: resident10.id)
+care_taker10 = User.create(email: "julia@gmailcom", password: "123456", first_name: "julia", last_name: "coelho", role: "care taker")
+resident10 = Resident.create(user_id: care_taker10.id, first_name: "maria", last_name: "azfal", birth_date: "15/04/1963", clinical_info: "diabetes", photography: "maria.png")
+report10 = Report.create(resident_id: resident10.id)
 report_category3 = ReportCategory.create(category: category7, report: report10, result: option20.name).
 
-care_taker5 = User.create(email: "julia@gmailcom", password: "123456", first_name: "julia", last_name: "coelho", role: "care taker")
-resident11 = Resident.create(user_id: care_taker5.id, first_name: "rodrigo", last_name: "coelho", birth_date: "15/04/1963", clinical_info: "back pain", photography: "rodrigo.png")
-report11= Report.create(resident_id: resident11.id)
+care_taker11 = User.create(email: "julia@gmailcom", password: "123456", first_name: "julia", last_name: "coelho", role: "care taker")
+resident11 = Resident.create(user_id: care_taker11.id, first_name: "rodrigo", last_name: "coelho", birth_date: "15/04/1963", clinical_info: "back pain", photography: "rodrigo.png")
+report11 = Report.create(resident_id: resident11.id)
 report_category3 = ReportCategory.create(category: category7, report: report11, result: option20.name)
 
-care_taker5 = User.create(email: "julia@gmailcom", password: "123456", first_name: "julia", last_name: "coelho", role: "care taker")
-resident12 = Resident.create(user_id: care_taker5.id, first_name: "sofia", last_name: "correia", birth_date: "15/04/1963", clinical_info: "diabetes", photography: "sofia.png")
-report12= Report.create(resident_id: resident12.id)
+care_taker12 = User.create(email: "julia@gmailcom", password: "123456", first_name: "julia", last_name: "coelho", role: "care taker")
+resident12 = Resident.create(user_id: care_taker12.id, first_name: "sofia", last_name: "correia", birth_date: "15/04/1963", clinical_info: "diabetes", photography: "sofia.png")
+report12 = Report.create(resident_id: resident12.id)
 report_category3 = ReportCategory.create(category: category7, report: report12, result: option20.name)
 
 puts "All done!"
