@@ -6,11 +6,19 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+puts "Cleaning DB..."
 Option.destroy_all
+puts "Options deleted!"
 Category.destroy_all
+puts "Categories deleted!"
 Resident.destroy_all
+puts "Residents deleted!"
 User.destroy_all
+puts "Uers deleted!"
 Report.destroy_all
+puts "Reports deleted!"
+
+puts "Creating new DB..."
 
 category1 = Category.create(name: "sleep")
 
@@ -81,3 +89,5 @@ care_taker5 = User.create(email: "julia@gmailcom", password: "123456", first_nam
 resident5 = Resident.create(user_id: care_taker5.id, first_name: "margarida", last_name: "almeida", birth_date: "15/04/1963", clinical_info: "deaf", photography: "margarida.png")
 report5 = Report.create(resident_id: resident5.id)
 report_category3 = ReportCategory.create(category: category7, report: report5, result: option20.name)
+
+puts "All done!"
