@@ -1,0 +1,7 @@
+<div class="text-center report-form">
+  <div class="mb-5">
+    <h1 class="page-title">Daily Report</h1>
+    <h4><%= @report.created_at.strftime('%e') + @report.created_at.strftime('th %B %Y') %></h4>
+  </div>
+    <%= render "card_report" %>
+</div>

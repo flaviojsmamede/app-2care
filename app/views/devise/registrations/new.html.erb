@@ -1,6 +1,5 @@
 
-<div class="container">
-  <h3 class="text-center page-title">Sign up</h3>
+  <h1 class="text-center">Sign up</h3>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
@@ -25,12 +24,12 @@
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
     </div>
+
     <div class="text-center">
         <div class="form-actions ">
-          <%= f.button :submit, "Sign up", class:"button m-3" %>
+          <%= f.submit "Sign up", class:"button-primary-2care w-100 my-2 p-0" %>
         </div>
       <% end %>
 
       <%= render "devise/shared/links" %>
     </div>
-</div>

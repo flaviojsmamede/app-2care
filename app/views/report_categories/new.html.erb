@@ -1,0 +1,9 @@
+<div class="page-title">
+<h1>form</h1>
+  <%= simple_form_for [@report, @report_category] do |f| %>
+    <%= f.association :category %>
+    <div class="form-actions">
+      <%= f.button :submit, class: "button-primary-2care"%>
+    </div>
+  <% end %>
+</div>

@@ -13,14 +13,16 @@
 
   <body>
     <% if controller_name == "pages" && action_name == "home" %>
-        <%= yield %>
-      <% else %>
+      <%= yield %>
+    <% else %>
       <%= render "shared/main-navbar" %>
         <div class="row justify-content-center div-margin-top">
-          <div class="col-10">
+          <div class="col-10 mb-5 pb-5">
             <%= yield %>
           </div>
         </div>
+      <%= render "shared/menu-bar" %>
     <% end %>
+    <%= render "shared/flashes" %>
   </body>
 </html>

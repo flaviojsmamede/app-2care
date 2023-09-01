@@ -10,7 +10,7 @@
 
 .profile-card img {
   height: 100%;
-  width: 20vw;
+  width: 40%;
   object-fit: cover;
   position: relative;
   left: 0;
@@ -30,7 +30,7 @@
 }
 
 .blue-text {
-  color: $blue;
+  color: $blue-2;
   font-size: 14px;
   font-family: $body-font;
 }
@@ -43,5 +43,6 @@
 
 .profile-card .profile-card-infos {
   text-align: center;
+  margin-left: 5%;
   margin-right: 5%;
 }

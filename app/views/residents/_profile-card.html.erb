@@ -1,12 +1,15 @@
-<div class="profile-card">
+<div class="profile-card mb-3">
   <div class="card-height d-flex justify-content-between align-items-center">
-    <div>
-      <% if resident.photo.attached? %>
-        <%= cl_image_tag resident.photo.key, crop: :fill %>
+    <%# <div> %>
+      <% #if resident.photo.attached? %>
+      <% if resident.photography.present? %>
+        <%#= cl_image_tag resident.photo.key, crop: :fill %>
+        <%= image_tag resident.photography %>
       <% else %>
-        <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", crop: :contain %>
+        <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", crop: :fill %>
       <% end %>
-    </div>
+
+    <%# </div> %>
     <div class="profile-card-infos">
       <div>
         <h3><%= resident.first_name.capitalize %> <%= resident.last_name.capitalize %></h3>
