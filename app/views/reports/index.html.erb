@@ -1,3 +1,8 @@
+<div>
+  <h1 class="page-title">Reports</h1>
+</div>
 <% @reports.each do |report| %>
-  <p><%= report.created_at %></p>
+  <%= link_to report_path(report) do %>
+    <p class="button-secondary-2care"><%= report.created_at.strftime('%e') + report.created_at.strftime('th %B %Y')%></p>
+  <% end %>
 <% end %>
