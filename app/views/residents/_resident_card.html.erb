@@ -15,7 +15,17 @@
       </div>
     </div>
   </div>
-  <div class="card-resident-icon">
-    <i class="fa-solid fa-file-pen"></i>
-  </div>
+
+  <%# DO NOT delete this button, it is repeated on purpose because if we delete it the other one won't appear %>
+  <%= link_to dashboard_path do %>
+    <div class="card-resident-icon d-none">
+      <i class="fa-solid fa-file-pen"></i>
+    </div>
+  <% end %>
+
+  <%= simple_form_for [resident, Report.new] do |f| %>
+    <%= button_tag type: 'submit', class: "card-resident-icon" do %>
+      <i class="fa-solid fa-file-pen"></i>
+    <% end %>
+<% end %>
 </div>
