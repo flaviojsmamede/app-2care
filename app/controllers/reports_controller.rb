@@ -2,13 +2,12 @@ class ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
 
   def index
-    @reports = Report.all
-    @report = Report.new
     @resident = Resident.find(params[:resident_id])
+    @reports = @resident.reports
+    @report = Report.new
   end
 
   def show
-    @report = Report.find(params[:id])
   end
 
   def create

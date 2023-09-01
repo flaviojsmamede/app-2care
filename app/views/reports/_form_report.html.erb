@@ -1,5 +1,12 @@
 
-<%= simple_form_for [resident,report], html: {
+<%= simple_form_for [resident,report] do |f| %>
+  <div class="form-actions">
+    <%= f.button :submit, class: "d-flex button-primary-2care" %>
+  </div>
+<% end %>
+
+<%# ,
+html: {
       data: {
         controller: "alert",
         alert_icon_value: "warning",
@@ -10,9 +17,4 @@
         cancel_button_text: "Cancel",
         action: "submit->alert#initSweetalert",
         turbo: false
-      } } do |f| %>
-
-  <div class="form-actions">
-    <%= f.button :submit, class: "d-flex button-primary-2care" %>
-  </div>
-<% end %>
+      } } %>

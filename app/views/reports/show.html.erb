@@ -2,6 +2,8 @@
   <div class="mb-5">
     <h1 class="page-title">Daily Report</h1>
     <h4><%= @report.created_at.strftime('%e') + @report.created_at.strftime('th %B %Y') %></h4>
-  </div>
     <%= render "card_report" %>
+    <p><%= link_to "add category", new_report_report_category_path(@report), class:"button-primary-2care btn mt-3" %></p>
+  </div>
+
 </div>

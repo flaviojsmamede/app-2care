@@ -5,6 +5,7 @@ class ReportCategoriesController < ApplicationController
 
   def show
     @report_category = ReportCategory.find(params[:id])
+    @report = @report_category.report_id
     @category = @report_category.category
   end
 
