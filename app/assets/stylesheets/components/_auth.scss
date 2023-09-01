@@ -3,8 +3,18 @@
 // }
 
 .auth{
-  margin: 5% auto;
-  width: 50%;
+  margin: 35% auto 0 auto;
+  width: 70%;
+
+  .button-primary-2care{
+    padding: 10px 0 10px 0;
+    width: 100%;
+    &:hover{
+      background-color: $white;
+      color: $blue-2;
+      border: 1px solid $blue-2 ;
+    }
+  }
 }
 .auth h1{
   color: $blue-2;
