@@ -1,34 +1,32 @@
-<div class="auth">
-  <h1 class="mb-3 text-center h4">My Account</h1>
+<h1 class="page-title">My Account</h1>
 
-  <div class="row d-flex flex-row ">
-    <div class="col">
-      <div class="d-flex flex-row justify-content-between border-bottom mb-3">
-        <div>
-          <strong><p>First Name</p></strong>
-          <p class="text-secondary"><%= current_user.first_name.capitalize %></p>
-        </div>
-        <div>
-          <strong><p>Last Name</p></strong>
-          <p class="text-secondary"><%= current_user.last_name.capitalize %></p>
-        </div>
+<div class="row d-flex flex-row ">
+  <div class="col">
+    <div class="d-flex flex-row justify-content-between border-bottom mb-3">
+      <div>
+        <strong><p>First Name</p></strong>
+        <p class="text-secondary"><%= current_user.first_name.capitalize %></p>
       </div>
-      <div class="d-flex flex-row justify-content-between border-bottom mb-3">
-        <div>
-          <strong><p>Email</p></strong>
-          <p class="text-secondary"><%= current_user.email %>
-        </div>
+      <div>
+        <strong><p>Last Name</p></strong>
+        <p class="text-secondary"><%= current_user.last_name.capitalize %></p>
       </div>
-      <div class="d-flex flex-row justify-content-between border-bottom mb-3">
-        <div>
-          <strong><p>Password</p></strong>
-          <p class="text-secondary">*********</p>
-        </div>
+    </div>
+    <div class="d-flex flex-row justify-content-between border-bottom mb-3">
+      <div>
+        <strong><p>Email</p></strong>
+        <p class="text-secondary"><%= current_user.email %>
+      </div>
+    </div>
+    <div class="d-flex flex-row justify-content-between">
+      <div>
+        <strong><p>Password</p></strong>
+        <p class="text-secondary">*********</p>
       </div>
     </div>
   </div>
-  <div>
-    <%= link_to 'Edit User', edit_user_registration_path, class:"button-primary-2care my-3" %>
-    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class:"button-primary-2care my-3" %>
-  </div>
+</div>
+<div>
+  <%= link_to 'Edit User', edit_user_registration_path, class:"button-primary-2care my-3" %>
+  <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class:"button-danger-2care my-3" %>
 </div>
