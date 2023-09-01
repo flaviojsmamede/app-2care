@@ -1,6 +1,16 @@
-<%= simple_form_for [resident, report] do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+<%= simple_form_for [resident,report], html: {
+      data: {
+        controller: "alert",
+        alert_icon_value: "warning",
+        alert_title_value: "Are your sure?",
+        alert_html_value: "Create new post.",
+        confirm_button_text: "All good!",
+        show_cancel_button: true,
+        cancel_button_text: "Cancel",
+        action: "submit->alert#initSweetalert",
+        turbo: false
+      } } do |f| %>
 
   <div class="form-actions">
     <%= f.button :submit, class: "d-flex button-primary-2care" %>

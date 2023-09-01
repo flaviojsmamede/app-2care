@@ -1,5 +1,5 @@
 class ResidentsController < ApplicationController
-  before_action :set_resident, only: %i[ show edit update destroy ]
+  before_action :set_resident, only: %i[show edit update destroy]
 
   def index
     @residents = Resident.all
