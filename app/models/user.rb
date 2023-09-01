@@ -7,14 +7,14 @@ class User < ApplicationRecord
   has_many :residents
 
   validates :first_name,
-  presence: true,
-  length: { minimum: 3 },
-  format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
+            presence: true,
+            length: { minimum: 3 },
+            format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
 
   validates :last_name,
-  presence: true,
-  length: { minimum: 3 },
-  format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
+            presence: true,
+            length: { minimum: 3 },
+            format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
 
   def full_name
     "#{first_name} #{last_name}"
