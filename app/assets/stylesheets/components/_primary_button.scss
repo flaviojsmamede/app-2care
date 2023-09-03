@@ -8,6 +8,12 @@
   justify-content: center;
   display: flex;
   width: 100%;
+
+  &:hover{
+    background-color: $white;
+    color: $blue-2;
+    border: 1px solid $blue-2 ;
+  }
 }
 
 .button-danger-2care {
@@ -20,4 +26,10 @@
   justify-content: center;
   display: flex;
   width: 100%;
+
+  &:hover{
+    background-color: $white;
+    color: $blue-2;
+    border: 1px solid $blue-2 ;
+  }
 }
