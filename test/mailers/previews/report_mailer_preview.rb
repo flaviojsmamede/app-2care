@@ -9,5 +9,4 @@ class ReportMailerPreview < ActionMailer::Preview
     # report = Report.first
     ReportMailer.email_report(family_member, resident)
   end
-
 end
