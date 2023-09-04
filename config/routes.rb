@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :residents do
     resources :reports, only: [:index, :create]
-    resources :family_members, only: [:new, :create, :edit, :update, :show, :index]
+    resources :family_members
   end
 
   resources :reports, only: [:show] do

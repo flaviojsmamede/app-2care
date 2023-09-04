@@ -1,12 +1,17 @@
-<div>
+<div class= "d-flex justify-content-between align-items-baseline">
   <h1 class="page-title">Contacts</h1>
+  <div class="page-title">
+    <%= link_to "#" do %>
+      <i class="fa-solid fa-plus"></i>
+    <% end %>
+  </div>
 </div>
 
 <div class="row">
   <% @family_members.each do |family_member| %>
-      <%= link_to resident_family_member(resident) do %>
+      <%= link_to resident_family_member_path(@resident, family_member) do %>
         <div class="col mb-3">
-          <%= render "resident_card", resident: resident %>
+          <%= render "family_member_card", family_member: family_member %>
         </div>
     <% end %>
   <% end %>
