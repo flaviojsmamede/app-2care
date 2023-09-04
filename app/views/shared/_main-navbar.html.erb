@@ -8,13 +8,18 @@
     </div>
   <% end %>
 
-    <% if controller_name == "reports" || controller_name == "family_members" %>
+    <% if controller_name == "reports" || controller_name == "family_members" && action_name == "index" %>
 
       <%= link_to resident_path(@resident.id), class: "navbar-text" do %>
         <h2><%= @resident.first_name.capitalize %> <%= @resident.last_name.capitalize %></h2>
       <% end %>
 
+    <% elsif controller_name == "family_members" && action_name == "show" %>
+
+        <h2 class="navbar-text"><%= @resident.first_name.capitalize %>'s <%= @family_member.relationship %></h2>
+
     <% elsif controller_name == "report_categories" %>
+
       <h2 class="navbar-text"><%= @report.resident.first_name.capitalize %>'s Report</h2>
 
     <% else %>
