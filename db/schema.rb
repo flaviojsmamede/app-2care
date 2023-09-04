@@ -72,13 +72,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_150731) do
   end
 
   create_table "report_categories", force: :cascade do |t|
-    t.string "result"
     t.text "additional_informations"
     t.bigint "category_id", null: false
     t.bigint "report_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "option_id", null: false
     t.index ["category_id"], name: "index_report_categories_on_category_id"
+    t.index ["option_id"], name: "index_report_categories_on_option_id"
     t.index ["report_id"], name: "index_report_categories_on_report_id"
   end
 
@@ -123,6 +124,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_150731) do
   add_foreign_key "family_members", "residents"
   add_foreign_key "options", "categories"
   add_foreign_key "report_categories", "categories"
+  add_foreign_key "report_categories", "options"
   add_foreign_key "report_categories", "reports"
   add_foreign_key "reports", "residents"
   add_foreign_key "residents", "users"
