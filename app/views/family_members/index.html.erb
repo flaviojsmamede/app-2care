@@ -4,9 +4,9 @@
 
 <div class="row">
   <% @family_members.each do |family_member| %>
-      <%= link_to resident_family_member(resident) do %>
+      <%= link_to resident_family_member(family_member) do %>
         <div class="col mb-3">
-          <%= render "resident_card", resident: resident %>
+          <%= render "resident_card", family_member: family_member %>
         </div>
     <% end %>
   <% end %>
