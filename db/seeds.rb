@@ -11,12 +11,14 @@ Option.destroy_all
 puts "Options deleted!"
 Category.destroy_all
 puts "Categories deleted!"
+FamilyMember.destroy_all
+puts "Family members deleted!"
 Resident.destroy_all
 puts "Residents deleted!"
-User.destroy_all
-puts "Uers deleted!"
 Report.destroy_all
 puts "Reports deleted!"
+User.destroy_all
+puts "Uers deleted!"
 
 puts "Creating new DB..."
 
