@@ -1,5 +1,6 @@
 class FamilyMembersController < ApplicationController
   def index
+    @resident = Resident.find(params[:resident_id])
     @family_members = FamilyMember.all
   end
 
