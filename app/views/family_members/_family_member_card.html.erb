@@ -11,13 +11,13 @@
     <div class="card-resident-infos">
       <div>
         <h2><%= family_member.first_name.capitalize %></h2>
-        <p><%#= family_member.clinical_info.capitalize %></p>
+        <p><%= family_member.email %></p>
       </div>
     </div>
   </div>
 
   <%# DO NOT delete this button, it is repeated on purpose because if we delete it the other one won't appear %>
-  <%= link_to dashboard_path do %>
+  <%= link_to "" do %>
     <div class="card-resident-icon">
       <i class="fa-solid fa-phone"></i>
     </div>
