@@ -1,3 +1,65 @@
-<div>
+<div class= "d-flex justify-content-between align-items-baseline">
   <h1 class="page-title"><%= @family_member.first_name.capitalize %></h1>
+  <div class="page-title">
+    <%#= link_to edit_user_registration_path do %>
+      <%# <i class="fa-solid fa-pen-to-square"></i> %>
+    <%# end %>
+  </div>
+</div>
+
+<div>
+  <%#= image_tag  %>
+</div>
+
+<div class="row d-flex flex-row ">
+  <div class="col">
+    <div class="d-flex flex-row justify-content-between border-bottom mb-3 gap-3">
+      <div class="flex-grow-1">
+        <strong><p>First Name</p></strong>
+        <div class="white-button mb-2">
+          <div class="d-flex">
+            <p class="p-2 m-0"><%= @family_member.first_name.capitalize %></p>
+          </div>
+        </div>
+      </div>
+      <div class="flex-grow-1">
+        <strong><p>Last Name</p></strong>
+        <div class="white-button mb-2">
+          <div class="d-flex">
+            <p class="p-2 m-0"><%= @family_member.last_name.capitalize %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-row justify-content-between">
+      <div>
+        <strong><p>Relationship</p></strong>
+        <div class="white-button mb-2">
+          <div class="d-flex">
+            <p class="p-2 m-0"><%= @family_member.relationship.capitalize %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-row justify-content-between border-bottom mb-3">
+      <div>
+        <strong><p>Email</p></strong>
+        <div class="white-button mb-2">
+          <div class="d-flex">
+            <p class="p-2 m-0"><%= @family_member.email %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-row justify-content-between">
+      <div>
+        <strong><p>Phone number</p></strong>
+        <div class="white-button mb-2">
+          <div class="d-flex">
+            <p class="p-2 m-0"><%= @family_member.phone_number %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
