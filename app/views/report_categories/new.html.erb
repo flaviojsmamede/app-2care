@@ -1,6 +1,8 @@
 <div class="page-title">
+  <h1><%= @categories.first.name %></h1>
   <%= simple_form_for [@report, @report_category] do |f| %>
-    <%= f.association :category, include_blank: false %>
+    <%= f.input :option, as: :radio_buttons, collection: @categories.first.options, include_blank: false %>
+    <%= f.input :category_id, as: :hidden, input_html: { value: @categories.first.id } %>
     <div class="form-actions">
       <%= f.button :submit, "Add", class: "button-primary-2care"%>
     </div>
@@ -9,3 +11,6 @@
       <p><%= link_to "check report", report_path(@report), class:"button-primary-2care btn mt-2" %></p>
 
 </div>
+
+
+

@@ -10,6 +10,7 @@ class ReportCategoriesController < ApplicationController
   end
 
   def new
+    @categories = Category.all
     @report = Report.find(params[:report_id])
     @report_category = ReportCategory.new
   end
