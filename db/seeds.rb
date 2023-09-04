@@ -68,6 +68,7 @@ care_taker1 = User.create(email: "flavio@gmailcom", password: "123456", first_na
 resident1 = Resident.create(user_id: care_taker1.id, first_name: "nuno", last_name: "cassandra", birth_date: "15/04/1963", clinical_info: "Insomnia", photography: "nuno.png")
 report1 = Report.create(resident_id: resident1.id)
 report_category1 = ReportCategory.create(category: category4, report: report1, result: option10.name)
+family_member1 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident1.id)
 
 care_taker2 = User.create(email: "ana@gmailcom", password: "123456", first_name: "ana", last_name: "almeida", role: "care taker")
 resident2 = Resident.create(user_id: care_taker2.id, first_name: "armindo", last_name: "matias", birth_date: "15/04/1963", clinical_info: "diabetes", photography: "armindo.png")
