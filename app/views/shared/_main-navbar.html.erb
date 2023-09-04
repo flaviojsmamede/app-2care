@@ -7,17 +7,22 @@
       <i class="fa-solid fa-arrow-left"></i>
     </div>
   <% end %>
-    <% if controller_name == "reports" || controller_name == "report_categories"  #&& action_name == "new" %>
-      <%# TODO: The name needs to be dynamic with the resident's first name %>
-       <h2 class="navbar-text"><%= @resident.first_name.capitalize %>'s Report</h2>
-    <% elsif controller_name == "family_members" %>
+
+    <% if controller_name == "reports" || controller_name == "family_members" %>
+
       <%= link_to resident_path(@resident.id), class: "navbar-text" do %>
         <h2><%= @resident.first_name.capitalize %> <%= @resident.last_name.capitalize %></h2>
       <% end %>
+
+    <% elsif controller_name == "report_categories" %>
+      <h2 class="navbar-text"><%= @report.resident.first_name.capitalize %>'s Report</h2>
+
     <% else %>
+
       <%= link_to dashboard_path, class: "logo" do %>
         <%= image_tag "logo2care.png", alt: "logo 2 care", class: "logo" %>
       <% end %>
+      
     <% end %>
   <%# TODO: this icon only appears on the report creation and it will LINK to a modal %>
   <%# to confirm if the user really wants to leave the report %>
