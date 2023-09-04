@@ -8,7 +8,12 @@
 </div>
 
 <div>
-  <%#= image_tag %>
+  <% if current_user.photography.present? %>
+    <%#= cl_image_tag resident.photo.key, crop: :fill %>
+    <%= image_tag current_user.photography, class: "profile-photo mb-3"%>
+  <% else %>
+    <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", crop: :fill, class: "profile-photo mb-3" %>
+  <% end %>
 </div>
 
 <div class="row d-flex flex-row ">
