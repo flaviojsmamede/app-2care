@@ -7,6 +7,13 @@
   line-height: normal;
   margin-bottom: 20px;
   margin-top: 5vh;
+
+  button{
+    color: $blue;
+    border: none;
+    background-color: $light-blue;
+  }
+
 }
 
 .profile-card-info h1 {

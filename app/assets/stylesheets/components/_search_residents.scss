@@ -1,0 +1,23 @@
+.search_residents {
+
+  i{
+    color: $blue-2;
+  }
+  
+  .form-control{
+    border-radius: 10px 0 0 10px;
+  }
+
+  .button-primary-2care{
+    padding: 10px;
+    border: none;
+    width: auto;
+    border-radius: 0 10px 10px 0;
+    &:hover{
+      background-color: $white;
+      color: $blue-2;
+      border: 1px solid $blue-2 ;
+    }
+  }
+
+}

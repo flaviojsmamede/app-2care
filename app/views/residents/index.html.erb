@@ -1,6 +1,29 @@
-<h1 class="page-title">Residents</h1>
+<div data-controller="toggle-items">
 
-<div class="">
+    <div class= "page-title d-flex justify-content-between">
+      <h1 >Residents</h1>
+      <div>
+        <button data-toggle-items-target="searchIcon"><i class="fa-solid fa-magnifying-glass" data-action="click->toggle-items#displaySearch"></i></button>
+        <button><i class="fa-solid fa-plus"></i></button>
+      </div>
+    </div>
+
+    <div class="search_residents row justify-content-center d-none mb-4" data-toggle-items-target="searchForm">
+      <div class="col-sm-8 my-3">
+        <%= form_with url: residents_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Type the name of a resident"
+            %>
+          <%= submit_tag "Search", name: "", class: "button-primary-2care" %>
+        <% end %>
+      </div>
+    </div>
+
+</div>
+
+
   <div class="row">
     <% @residents.each do |resident| %>
         <%= link_to resident_path(resident) do %>
@@ -10,4 +33,3 @@
       <% end %>
     <% end %>
   </div>
-</div>
