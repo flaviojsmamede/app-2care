@@ -7,12 +7,20 @@
   </div>
 </div>
 
-<div class="row">
-  <% @family_members.each do |family_member| %>
-      <%= link_to resident_family_member_path(@resident, family_member) do %>
-        <div class="col mb-3">
-          <%= render "family_member_card", family_member: family_member %>
-        </div>
+<%#= if FamilyMembers.count == 0 %>
+
+  <%# <h1>TEST</h1> %>
+
+<%# else %>
+
+  <div class="row">
+    <% @family_members.each do |family_member| %>
+        <%= link_to resident_family_member_path(@resident, family_member) do %>
+          <div class="col mb-3">
+            <%= render "family_member_card", family_member: family_member %>
+          </div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+
+<%# end %>
