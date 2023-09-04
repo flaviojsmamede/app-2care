@@ -9,11 +9,14 @@
   margin-top: 5vh;
 
   button{
-    color: $blue;
+    color: $blue-2;
     border: none;
     background-color: $light-blue;
   }
 
+  i {
+    font-size: 22px;
+  }
 }
 
 .profile-card-info h1 {
