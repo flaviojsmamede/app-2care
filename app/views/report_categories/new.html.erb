@@ -4,6 +4,7 @@
       <div class="carousel-item <%= index == 0 ? 'active' : '' %>" data-report-target="formCarouselItem">
         <div>
           <h1 class="page-title text-center"><%= category.name.capitalize %></h1>
+          <%= category.icon.html_safe %>
           <%= simple_form_for [@report, @report_category], html: { report_target: "form" } do |f| %>
             <%= f.input :option_id, as: :radio_buttons, legend_tag: false, collection: category.options, include_blank: false %>
             <%= f.input :category_id, as: :hidden, input_html: { value: category.id } %>

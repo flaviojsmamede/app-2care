@@ -34,6 +34,16 @@
   font-size: 28px;
 }
 
+
+.carousel-inner i{
+  color: $blue-2;
+  opacity: 0.5;
+  font-size: 60px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
 .grey-empty-text {
   color: $blue-2;
   opacity: 0.25;
