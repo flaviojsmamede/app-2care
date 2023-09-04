@@ -1,31 +1,26 @@
 <div class="card-resident">
   <div class="flex-card d-flex">
     <% #if resident.photo.attached? %>
-    <% if resident.photography.present? %>
+    <% if family_member.photography.present? %>
       <%#= cl_image_tag resident.photo.key, crop: :fill %>
-      <%= image_tag resident.photography %>
+      <%= image_tag family_member.photography %>
     <% else %>
       <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", crop: :fill %>
     <% end %>
 
     <div class="card-resident-infos">
       <div>
-        <h2><%= resident.first_name.capitalize %></h2>
-        <p><%= resident.clinical_info.capitalize %></p>
+        <h2><%= family_member.first_name.capitalize %></h2>
+        <p><%= family_member.email %></p>
       </div>
     </div>
   </div>
 
   <%# DO NOT delete this button, it is repeated on purpose because if we delete it the other one won't appear %>
-  <%= link_to dashboard_path do %>
-    <div class="card-resident-icon d-none">
-      <i class="fa-solid fa-file-pen"></i>
+  <%= link_to "" do %>
+    <div class="card-resident-icon">
+      <i class="fa-solid fa-envelope"></i>
     </div>
   <% end %>
 
-  <%= simple_form_for [resident, Report.new] do |f| %>
-    <%= button_tag type: 'submit', class: "card-resident-icon" do %>
-      <i class="fa-solid fa-file-pen"></i>
-    <% end %>
-  <% end %>
 </div>

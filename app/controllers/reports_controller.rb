@@ -30,6 +30,14 @@ class ReportsController < ApplicationController
     end
   end
 
+  # send the email with the report
+  # def send
+  #   @resident = Resident.find(params[:resident_id])
+  #   @family_member = Resident.find()....
+  #   @report.resident = @resident
+  #   ReportMailer.email_report(@family_member, @resident, @report).deliver_now
+  # end
+
   private
 
   def set_report
