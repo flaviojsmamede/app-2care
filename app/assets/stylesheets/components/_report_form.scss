@@ -33,3 +33,17 @@
   border-color: $red;
   font-size: 28px;
 }
+
+.grey-empty-text {
+  color: $blue-2;
+  opacity: 0.25;
+  font-size: 40px;
+  padding: 40px;
+  text-align: center;
+
+  i {
+    font-size: 90px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
