@@ -1,3 +1,3 @@
 class FamilyMember < ApplicationRecord
-  belongs_to :resident
+  has_many :residents
 end
