@@ -22,11 +22,20 @@
       <%= link_to dashboard_path, class: "logo" do %>
         <%= image_tag "logo2care.png", alt: "logo 2 care", class: "logo" %>
       <% end %>
-      
+
     <% end %>
   <%# TODO: this icon only appears on the report creation and it will LINK to a modal %>
   <%# to confirm if the user really wants to leave the report %>
+
+  <% if controller_name == "report_categories" %>
     <div class="icon-div-right">
-      <i class="fa-solid fa-xmark d-none"></i>
+      <i class="fa-solid fa-xmark"></i>
     </div>
+  <% else %>
+    <%= link_to "#" do %>
+      <div class="icon-div-right">
+        <i class="fa-solid fa-xmark d-none"></i>
+      </div>
+    <% end %>
+  <% end %>
 </div>

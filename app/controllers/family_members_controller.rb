@@ -6,6 +6,7 @@ class FamilyMembersController < ApplicationController
 
   def show
     @family_member = FamilyMember.find(params[:id])
+    @resident = Resident.find(params[:resident_id])
   end
 
   private
