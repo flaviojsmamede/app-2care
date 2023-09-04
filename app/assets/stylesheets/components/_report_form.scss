@@ -33,3 +33,27 @@
   border-color: $red;
   font-size: 28px;
 }
+
+
+.carousel-inner i{
+  color: $blue-2;
+  opacity: 0.5;
+  font-size: 60px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.grey-empty-text {
+  color: $blue-2;
+  opacity: 0.25;
+  font-size: 40px;
+  padding: 40px;
+  text-align: center;
+
+  i {
+    font-size: 90px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}

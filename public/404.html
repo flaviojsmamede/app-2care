@@ -8,36 +8,54 @@
       margin: 0;
       padding: 0;
       background-image: url('https://images.pexels.com/photos/8860196/pexels-photo-8860196.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-      background-size:cover;
+      background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
       text-align: center;
       font-family: Arial, Helvetica, sans-serif;
-
+      background-position: center;
     }
 
     .dialog{
-      color: gainsboro;
+      color: white;
+      margin-bottom: 60px;
+      padding: 10%;
     }
 
     a{
       text-align: center;
       text-decoration: none;
-      font-size: 2rem;
-      color: #0693A7 ;
+      font-size: 1.5rem;
+      color: #0693A7;
       font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+      background-color: white;
+      border-radius: 10px;
+      padding: 4%;
+      text-align: center;
+      width: 100%;
+      margin-top: 50px;;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    h1 {
+      font-size: 7rem;
+      color: white;
     }
   </style>
 </head>
 
 <body class="rails-default-error-page">
+  <h1>404</h1>
   <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
+    <p><strong>The page you were looking for doesn't exist.</strong></p>
+    <p>You may have mistyped the address or the page may have moved.</p>
     <p>If you are the application owner check the logs for more information.</p>
   </div>
-  <a href="http://www.2care.me/">Back to the Homepage</a>
+  <a href="http://www.2care.me/" class="white-button">Back to the Homepage</a>
 </body>
 </html>
