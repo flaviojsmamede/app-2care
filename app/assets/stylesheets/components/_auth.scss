@@ -1,10 +1,5 @@
-// .auth{
-//   background-color: $light-blue;
-// }
-
 .auth{
   margin: 10% auto 0 auto;
-  width: 70%;
 
   .button-primary-2care{
     padding: 10px 0 10px 0;
@@ -23,15 +18,13 @@
     border: none;
     &:hover{
       background-color: $white;
-      color: $blue-2;
-      border: 1px solid $blue-2 ;
+      color: $red;
+      border: 1px solid $red ;
     }
   }
 
 }
 
-
 .auth h1{
   color: $blue-2;
-  font-weight: 800;
 }
