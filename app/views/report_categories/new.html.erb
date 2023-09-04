@@ -5,7 +5,20 @@
         <div class="page-title">
           <h1><%= category.name %></h1>
           <%= simple_form_for [@report, @report_category], html: { report_target: "form" } do |f| %>
-            <%= f.input :option_id, as: :radio_buttons, legend_tag: false, collection: category.options, include_blank: false %>
+            <% category.options.each_with_index do |option, option_index| %>
+              <div class="option-wrapper option-<%= option_index %> d-flex align-items-center">
+                <%= f.input :option_id, as: :radio_buttons, legend_tag: false, collection: [[option.name, option_index]], include_blank: false, input_html: { class: "d-none" }, item_label_class: "option" %>
+                <% case option %>
+                  <% when category.options[0]%>
+                  <h2><i class="fa-regular fa-face-smile"></i></h2>
+                  <% when  category.options[1]%>
+                  <h2><i class="fa-regular fa-face-meh"></i></h2>
+                  <% when  category.options[2]%>
+                  <h2><i class="fa-regular fa-face-frown"></i></h2>
+                <% end %>
+              </div>
+            <% end %>
+
             <%= f.input :category_id, as: :hidden, input_html: { value: category.id } %>
             <%= f.input :additional_informations, label: false, input_html: { placeholder: "Additional information" } %>
 

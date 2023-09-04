@@ -16,19 +16,23 @@
   border: 2px solid $green;
 }
 
-.option-1 {
+.option {
+  border: 1rem solid;
+}
+
+.option-0 {
   color: $green;
   border-color: $green;
   font-size: 28px;
 }
 
-.option-2 {
+.option-1 {
   color: $yellow;
   border-color: $yellow;
   font-size: 28px;
 }
 
-.option-3 {
+.option-2 {
   color: $red;
   border-color: $red;
   font-size: 28px;
