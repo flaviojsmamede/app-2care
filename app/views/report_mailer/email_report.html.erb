@@ -1,0 +1,19 @@
+<style>
+body{
+  font-family: sans-serif;
+}
+
+p{
+
+  color: green;
+}
+</style>
+
+
+<h1>Hello Mr <%= "#{@family_member.first_name.capitalize} #{@family_member.last_name.capitalize}"%> 😃</h1>
+
+<p>This is your daily report for your relative <strong><%= "#{@resident.first_name.capitalize} #{@resident.last_name.capitalize}" %></strong></p>
+
+<p>render report here....</p>
+
+<%= link_to "Visit our website", root_url %>
