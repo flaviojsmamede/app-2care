@@ -20,4 +20,32 @@
 
 body {
   margin: 0;
+  padding: 0;
 }
+
+/* Style the header and make it fixed at the top */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Style the footer and make it fixed at the bottom */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Style the main content area and add scrolling */
+main {
+  margin-top: 100px; /* Adjust this value to match the header height */
+  margin-bottom: 60px; /* Adjust this value to match the footer height */
+  overflow-y: scroll;
+  height: calc(100vh - 160px); /* Adjust this value based on header and footer height */
+}
+
+/* Style the content within the main area */
+// .content {
+//    padding: 20px;
+// }
