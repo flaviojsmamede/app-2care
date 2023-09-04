@@ -17,26 +17,44 @@
     }
 
     .dialog{
-      color: gainsboro;
+      color: white;
+      margin-bottom: 60px;
+      padding: 10%;
     }
 
     a{
       text-align: center;
       text-decoration: none;
-      font-size: 2rem;
-      color: #0693A7 ;
+      font-size: 1.5rem;
+      color: #0693A7;
       font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+      background-color: white;
+      border-radius: 10px;
+      padding: 4%;
+      text-align: center;
+      width: 100%;
+      margin-top: 50px;;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    h1 {
+      font-size: 7rem;
+      color: white;
     }
   </style>
 </head>
 
 <body class="rails-default-error-page">
+  <h1>422</h1>
   <!-- This file lives in public/422.html -->
   <div class="dialog">
-    <div>
-      <h1>The change you wanted was rejected.</h1>
-      <p>Maybe you tried to change something you didn't have access to.</p>
-    </div>
+    <p><strong>The change you wanted was rejected.</strong></p>
+    <p>Maybe you tried to change something you didn't have access to.</p>
     <p>If you are the application owner check the logs for more information.</p>
   </div>
   <a href="http://www.2care.me/">Back to the Homepage</a>
