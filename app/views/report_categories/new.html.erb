@@ -1,16 +1,35 @@
-<div class="page-title">
-  <h1><%= @categories.first.name %></h1>
-  <%= simple_form_for [@report, @report_category] do |f| %>
-    <%= f.input :option, as: :radio_buttons, collection: @categories.first.options, include_blank: false %>
-    <%= f.input :category_id, as: :hidden, input_html: { value: @categories.first.id } %>
-    <div class="form-actions">
-      <%= f.button :submit, "Add", class: "button-primary-2care"%>
-    </div>
-  <% end %>
+<div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="999999" data-controller="report" data-action="slide.bs.carousel->report#callSubmit">
+  <div class="carousel-inner">
+    <% @categories.each_with_index do |category, index| %>
+      <div class="carousel-item <%= index == 0 ? 'active' : '' %>" data-report-target="formCarouselItem">
+        <div class="page-title">
+          <h1><%= category.name %></h1>
+          <%= simple_form_for [@report, @report_category], html: { report_target: "form" } do |f| %>
+            <%= f.input :option_id, as: :radio_buttons, legend_tag: false, collection: category.options, include_blank: false %>
+            <%= f.input :category_id, as: :hidden, input_html: { value: category.id } %>
+            <%= f.input :additional_informations, label: false, input_html: { placeholder: "Additional information" } %>
 
-      <p><%= link_to "check report", report_path(@report), class:"button-primary-2care btn mt-2" %></p>
+            <% if category == @categories.last %>
+              <%= f.submit "check report", class: "button-primary-2care btn mt-2"%>
+            <% else %>
+              <%= f.submit "Submit", class: "d-none"%>
+            <% end %>
+          <% end %>
+        </div>
+        <% unless category == @categories.first %>
+          <a class="carousel-control-prev" href="#categoryCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+        <% end %>
 
+        <% unless category == @categories.last %>
+          <a class="carousel-control-next" href="#categoryCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </a>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-
-

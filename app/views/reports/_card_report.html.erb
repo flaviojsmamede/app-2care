@@ -1,6 +1,6 @@
 <% @report.report_categories.each do |report_category| %>
     <% category_option = report_category.category.options %>
-    <% case  report_category.result%>
+    <% case  report_category.option.name %>
       <% when category_option.first.name %>
         <div class="d-flex justify-content-between align-items-center report-border mb-2 option-1">
           <h2><%= link_to report_category.category.name, report_report_category_path(@report, report_category), class:"option-1" %></h2>

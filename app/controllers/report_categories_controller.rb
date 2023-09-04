@@ -19,10 +19,10 @@ class ReportCategoriesController < ApplicationController
     @report = Report.find(params[:report_id])
     @report_category = ReportCategory.new(report_categories_params)
     @report_category.report = @report
-    if @report_category.save
-      redirect_to report_report_category_path(@report, @report_category)
-    else
-      render :new, status: :unprocessable_entity
+    @report_category.save
+
+    if Category.last == @report_category.category
+      redirect_to report_path(@report)
     end
   end
 
@@ -38,6 +38,6 @@ class ReportCategoriesController < ApplicationController
   private
 
   def report_categories_params
-    params.require(:report_category).permit(:result, :category_id)
+    params.require(:report_category).permit(:category_id, :additional_informations, :option_id)
   end
 end
