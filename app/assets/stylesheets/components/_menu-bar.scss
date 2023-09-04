@@ -1,5 +1,5 @@
 .menu-bar{
-  background-color: $light-blue;
+  background-color: $blue-2;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -17,33 +17,20 @@
   margin: 4px;
   cursor: pointer;
   text-decoration: none;
-  border-top: 3px solid transparent;
 
-  p {
-    color: $gray;
-    opacity: 0.85;
-    margin: 0;
-    padding: 0;
-  }
   i{
-    color: $gray;
-    opacity: 0.85;
+    color: $white;
+    opacity: 0.5;
   }
 }
 
 .tabs .tab.active{
   opacity: 1;
-  border-top: 3px solid $blue-2;
   border-radius: 3px;
 
-  p {
-    color: $blue-2;
-    opacity: 1;
-    margin: 0;
-    padding: 0;
-  }
   i{
-    color: $blue-2;
+    color: $white;
     opacity: 1;
+    font-size: 16px;
   }
 }
