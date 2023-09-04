@@ -18,11 +18,11 @@
 
         <h2 class="navbar-text"><%= @resident.first_name.capitalize %>'s <%= @family_member.relationship %></h2>
 
-    <% elsif controller_name == "report_categories" %>
+    <% elsif controller_name == "report_categories" || controller_name == "reports" && action_name == "show"%>
 
       <h2 class="navbar-text"><%= @report.resident.first_name.capitalize %>'s Report</h2>
 
-    <% elsif controller_name == "reports"%>
+    <% elsif controller_name == "reports" %>
 
       <h2 class="navbar-text"><%= @resident.first_name.capitalize %>'s Report</h2>
 
