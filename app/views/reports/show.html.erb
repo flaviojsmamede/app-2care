@@ -4,7 +4,7 @@
     <h4><%= @report.created_at.strftime('%e') + @report.created_at.strftime('th %B %Y') %></h4>
     <div class="mt-5">
       <%= render "card_report" %>
-      
+
       <p><%= link_to "add category", new_report_report_category_path(@report), class: "button-primary-2care btn mt-5 d-none" %></p>
       <p><%= button_to 'Send',
                         report_send_report_path(@report),
@@ -24,3 +24,4 @@
     </div>
   </div>
 </div>
+
