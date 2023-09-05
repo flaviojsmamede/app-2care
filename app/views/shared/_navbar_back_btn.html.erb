@@ -1,0 +1,18 @@
+<% if (controller_name == "pages" && action_name == "dashboard") || (controller_name == "report_categories" && action_name == "new")%>
+<% else %>
+  <% if (controller_name == "pages" && action_name == "account") || (controller_name == "residents" && action_name == "index") %>
+    <% back_path = dashboard_path %>
+  <% elsif (controller_name == "residents" && action_name == "show") %>
+    <% back_path = residents_path %>
+  <% elsif (controller_name == "residents" && action_name == "full_info") || (controller_name == "family_members" && action_name == "index") || (controller_name == "reports" && action_name == "show") %>
+    <% back_path = :back %>
+  <% elsif (controller_name == "reports" && action_name == "index") %>
+    <% back_path = resident_path(@resident) %>
+  <% end %>
+
+  <%= link_to back_path do %>
+    <div class="icon-div-left">
+      <i class="fa-solid fa-arrow-left"></i>
+    </div>
+  <% end %>
+<% end %>
