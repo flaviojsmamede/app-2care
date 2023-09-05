@@ -5,7 +5,7 @@
     <div class="mt-5">
       <%= render "card_report" %>
       <p><%= link_to "add category", new_report_report_category_path(@report), class: "button-primary-2care btn mt-5" %></p>
-      <p><%= link_to 'Send Report', report_path(@report) %></p>
+      <p><%= button_to 'Send Report', report_send_report_path(@report), method: :post %></p>
     </div>
   </div>
 </div>

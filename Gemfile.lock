@@ -229,6 +229,7 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.6)
+    ruby_http_client (3.5.5)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -242,6 +243,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sendgrid-ruby (6.6.2)
+      ruby_http_client (~> 3.4)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -298,6 +301,7 @@ DEPENDENCIES
   font-awesome-sass (~> 6.1)
   importmap-rails
   jbuilder
+  launchy (~> 2.4, >= 2.4.3)
   letter_opener
   pg (~> 1.1)
   pg_search
@@ -305,6 +309,7 @@ DEPENDENCIES
   rails (~> 7.0.7)
   sassc-rails
   selenium-webdriver
+  sendgrid-ruby
   simple_form!
   sprockets-rails
   stimulus-rails

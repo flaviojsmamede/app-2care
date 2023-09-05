@@ -31,12 +31,14 @@ class ReportsController < ApplicationController
   end
 
   # send the email with the report
-  # def send
-  #   @resident = Resident.find(params[:resident_id])
-  #   @family_member = Resident.find()....
-  #   @report.resident = @resident
-  #   ReportMailer.email_report(@family_member, @resident, @report).deliver_now
-  # end
+  def send_report
+    @report = Report.find(params[:report_id])
+    @report.resident.family_members.each do |family_member|
+      ReportMailer.email_report(family_member, @report.resident).deliver_now
+    end
+
+    redirect_to report_path(@report), notice: "report sent"
+  end
 
   private
 

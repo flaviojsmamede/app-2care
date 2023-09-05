@@ -8,7 +8,7 @@
     </div>
   <% end %>
 
-    <% if controller_name == "family_members" && action_name == "index" %>
+    <% if controller_name == "family_members" && action_name == "index" || (controller_name == "reports" && action_name == "index")  %>
 
       <%= link_to resident_path(@resident.id), class: "navbar-text" do %>
         <h2><%= @resident.first_name.capitalize %> <%= @resident.last_name.capitalize %></h2>
@@ -18,7 +18,7 @@
 
         <h2 class="navbar-text"><%= @resident.first_name.capitalize %>'s <%= @family_member.relationship %></h2>
 
-    <% elsif controller_name == "report_categories" || controller_name == "reports" && action_name == "show" %>
+    <% elsif controller_name == "report_categories" || controller_name == "reports" %>
 
       <h2 class="navbar-text"><%= @report.resident.first_name.capitalize %>'s Report</h2>
 
