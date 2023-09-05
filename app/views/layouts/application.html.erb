@@ -13,8 +13,25 @@
 
   <body>
     <% if controller_name == "pages" && action_name == "home" %>
+
       <%= yield %>
+
+    <% elsif controller_name == "report_categories" && action_name == "new"  %>
+    
+      <header>
+        <%= render "shared/main-navbar" %>
+      </header>
+      <main>
+        <div>
+          <div>
+            <%= render "shared/flashes" %>
+            <%= yield %>
+          </div>
+        </div>
+      </main>
+
     <% else %>
+
       <header>
         <%= render "shared/main-navbar" %>
       </header>
@@ -29,6 +46,8 @@
       <footer>
         <%= render "shared/menu-bar" %>
       </footer>
+
     <% end %>
+
   </body>
 </html>
