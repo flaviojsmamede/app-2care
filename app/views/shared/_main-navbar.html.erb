@@ -32,7 +32,15 @@
   <%# to confirm if the user really wants to leave the report %>
 
   <% if controller_name == "report_categories" %>
-    <div class="icon-div-right">
+    <div class="icon-div-right"
+          data-controller="alert"
+          data-action="click->alert#initSweetalert"
+          data-alert-icon-value="warning"
+          data-alert-title-value="Warning!"
+          data-alert-html-value="Are you sure you want to leave the report?"
+          data-alert-show-confirm-button-value="false"
+          data-alert-show-cancel-button-value="true"
+          data-alert-cancel-button-text-value="Close" >
       <i class="fa-solid fa-xmark"></i>
     </div>
   <% else %>
