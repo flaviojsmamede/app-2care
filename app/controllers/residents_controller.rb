@@ -3,16 +3,16 @@ class ResidentsController < ApplicationController
 
   def index
     # @residents = Resident.all
-    if params[:query].present?
-      search_query = params[:query].strip # Remove leading/trailing spaces
-      sql_query = <<~SQL
-        residents.first_name ILIKE :query
-        OR residents.last_name ILIKE :query
-      SQL
-      @residents = Resident.where(sql_query, query: "%#{search_query}%")
-    else
+    # if params[:query].present?
+    #   search_query = params[:query].strip # Remove leading/trailing spaces
+    #   sql_query = <<~SQL
+    #     residents.first_name ILIKE :query
+    #     OR residents.last_name ILIKE :query
+    #   SQL
+    #   @residents = Resident.where(sql_query, query: "%#{search_query}%")
+    # else
       @residents = Resident.all
-    end
+    # end
   end
 
   def new
