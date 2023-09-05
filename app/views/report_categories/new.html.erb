@@ -14,11 +14,11 @@
                     <%= option.name %>
                     <% case option %>
                     <% when category.options[0]%>
-                      <h2><i class="fa-regular fa-face-smile"></i></h2>
+                      <h2><i class="fa-regular fa-face-smile success"></i></h2>
                     <% when  category.options[1]%>
-                      <h2><i class="fa-regular fa-face-meh"></i></h2>
+                      <h2><i class="fa-regular fa-face-meh info"></i></h2>
                     <% when  category.options[2]%>
-                      <h2><i class="fa-regular fa-face-frown"></i></h2>
+                      <h2><i class="fa-regular fa-face-frown danger"></i></h2>
                     <% end %>
                   </label>
                 </fieldset>

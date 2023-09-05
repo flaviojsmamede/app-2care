@@ -19,26 +19,73 @@
   }
 }
 
-.option {
-  border: 1rem solid;
+.option-wrapper {
+  display: flex;
+  width: 240px;
+  height: 60px;
+  padding: 15px 20px;
+  justify-content: space-between;
+  border-radius: 10px;
+  border: 1px solid;
+  background: $white;
+  box-shadow: 0px 5px 5px 0px rgba(212, 149, 0, 0.20);
+  font-weight: 600;
+  i {
+    font-size: 28px;
+    padding-top: 2px;
+  }
 }
 
 .option-0 {
   color: $green;
   border-color: $green;
   font-size: 28px;
+  box-shadow: 0px 5px 5px 0px rgba(142, 159, 78, 0.20);
+  &:hover{
+    background-color: $green;
+    color: $white;
+    border-style: none;
+  }
 }
 
 .option-1 {
   color: $yellow;
   border-color: $yellow;
   font-size: 28px;
+  box-shadow: 0px 5px 5px 0px rgba(142, 159, 78, 0.20);
+  &:hover{
+    background-color: $yellow;
+    color: $white;
+    border-style: none;
+  }
 }
 
 .option-2 {
   color: $red;
   border-color: $red;
   font-size: 28px;
+  box-shadow: 0px 5px 5px 0px rgba(184, 55, 54, 0.20);
+  &:hover{
+    background-color: $red;
+    color: $white;
+    border-style: none;
+  }
+}
+
+.report-category {
+  color: $blue-2;
+  font-family: $body-font;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 20px;
+  margin-top: 5vh;
+}
+
+.form-check {
+  padding-left: 0;
+  margin-bottom: 0;
 }
 
 
