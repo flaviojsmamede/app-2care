@@ -26,14 +26,14 @@ class ReportCategoriesController < ApplicationController
     end
   end
 
-  def update
-    @report_category = ReportCategory.find(params[:id])
-    if @report_category.update(report_categories_params)
-      redirect_to new_report_report_category_path(@report_category.report)
-    else
-      render "report_categories/show"
-    end
-  end
+  # def update
+  #   @report_category = ReportCategory.find(params[:id])
+  #   if @report_category.update(report_categories_params)
+  #     redirect_to new_report_report_category_path(@report_category.report)
+  #   else
+  #     render "report_categories/show"
+  #   end
+  # end
 
   private
 
