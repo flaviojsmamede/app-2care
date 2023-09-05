@@ -20,9 +20,9 @@
 }
 
 .logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   height: 33px;
   width: 136px;
 }
@@ -40,10 +40,9 @@
 }
 
 .navbar-text {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
   margin-bottom: 0;
   color: $white;
   font: $body-font;
+  left: 50%; transform: translateX(-50%);
 }

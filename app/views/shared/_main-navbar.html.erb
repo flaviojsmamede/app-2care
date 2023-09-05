@@ -1,12 +1,7 @@
-<div class="main-navbar">
+<div class="main-navbar position-relative justify-content-<%= (controller_name == "report_categories" && action_name =="new") ? "end" : "between" %>">
   <%#= link_to :request.referrer do %>
-  <%= link_to :back do %>
+  <%= render "shared/navbar_back_btn" %>
   <%#= link_to 'javascript:history.back()' do %>
-
-    <div class="icon-div-left">
-      <i class="fa-solid fa-arrow-left"></i>
-    </div>
-  <% end %>
 
     <% if controller_name == "family_members" && action_name == "index" || (controller_name == "reports" && action_name == "index")  %>
 

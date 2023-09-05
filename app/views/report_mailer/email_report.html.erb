@@ -1,19 +1,32 @@
 <style>
-body{
-  font-family: sans-serif;
-}
+  body{
+    font-family: sans-serif;
+    background-color: green;
 
-p{
-
-  color: blue;
-}
+    p{
+    color: blue;
+    }
+  }
 </style>
 
+<body>
+  <h3>Hello Mr <%= "#{@family_member.first_name.capitalize} #{@family_member.last_name.capitalize}"%>!</h3>
 
-<h3>Hello Mr <%= "#{@family_member.first_name.capitalize} #{@family_member.last_name.capitalize}"%> 😃</h3>
+  <h4>Daily Report 📑: <%= @report.created_at.strftime('%e') + @report.created_at.strftime('th %B %Y') %></h4>
 
-<p>This is your daily report for your relative <strong><%= "#{@resident.first_name.capitalize} #{@resident.last_name.capitalize}" %></strong></p>
+  <p>This is your daily report for your relative <strong><%= "#{@resident.first_name.capitalize} #{@resident.last_name.capitalize}" %>. 👴</strong></p>
 
-<p>render report here....</p>
-
-<%= link_to "Visit our website", root_url %>
+  <ul>
+    <% @report.report_categories.each do |report_category| %>
+        <% category_option = report_category.category.options %>
+        <% case  report_category.option.name %>
+          <% when category_option.first.name %>
+            <li><h2><%= report_category.category.name.capitalize %> : <%= report_category.option.name.capitalize %></h2></li>
+          <% when category_option.second.name %>
+            <li><h2><%= report_category.category.name.capitalize %> : <%= report_category.option.name.capitalize %></h2></li>
+          <% when category_option.third.name %>
+            <li><h2><%= report_category.category.name.capitalize %> : <%= report_category.option.name.capitalize %></h2></li>
+        <% end %>
+    <% end %>
+  </ul>
+</body>
