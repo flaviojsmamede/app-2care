@@ -1,0 +1,98 @@
+<%= simple_form_for @report_category do |f| %>
+   <div class="mb-3 text-white">
+    <%= f.input :result, label: false, collection: Category.find(@category.id).options.pluck(:name), include_blank: false %>
+    <%= f.error :result %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save", class:"button-primary-2care" %>
+  </div>
+<% end %>
+
+
+<div class="icon-div-right mt-4" data-bs-toggle="modal" data-bs-target="#close">
+  <i class="fa-solid fa-xmark"></i>
+</div>
+
+<!-- Modal -->
+
+<div class="modal fade" id="close" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Information</h1>
+          button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="white-button" data-bs-dismiss="modal">Close without saving</button>
+        <button type="button" class="button-primary-2care">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="icon-div-right mt-4" data-bs-toggle="modal" data-bs-target="#eat">
+  <i class="fa-solid fa-xmark"></i>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="eat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel">Information</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in orci vulputate, pulvinar tellus at, <br>laoreet diam. Cras non turpis ut turpis lobortis fringilla. <br>Etiam ac velit lorem. Mauris ut augue pharetra, dignissim elit in, luctus sapien.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="icon-div-right mt-4" data-bs-toggle="modal" data-bs-target="#medication">
+  <i class="fa-solid fa-xmark"></i>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="medication" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel">Information</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in orci vulputate, pulvinar tellus at, <br>laoreet diam. Cras non turpis ut turpis lobortis fringilla. <br>Etiam ac velit lorem. Mauris ut augue pharetra, dignissim elit in, luctus sapien.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="sent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel">Information</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in orci vulputate, pulvinar tellus at, <br>laoreet diam. Cras non turpis ut turpis lobortis fringilla. <br>Etiam ac velit lorem. Mauris ut augue pharetra, dignissim elit in, luctus sapien.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

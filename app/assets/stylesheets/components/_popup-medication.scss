@@ -1,0 +1,17 @@
+.modal-title {
+  $body-font: 'Inter', sans-serif;
+  $blue-2: #0693A7;
+  font-size: medium;
+  font-weight: bold;
+  display: flex;
+}
+
+
+.modal-body {
+  $body-font: 'Inter', sans-serif;
+  $gray: #0E0000;
+  align-content: center;
+  justify-content: baseline;
+  font-size: small;
+  display: flex;
+}
