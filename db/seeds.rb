@@ -18,7 +18,7 @@ puts "Residents deleted!"
 Report.destroy_all
 puts "Reports deleted!"
 User.destroy_all
-puts "Uers deleted!"
+puts "Users deleted!"
 
 puts "Creating new DB..."
 

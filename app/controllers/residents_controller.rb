@@ -37,6 +37,10 @@ class ResidentsController < ApplicationController
     @user = current_user
   end
 
+  def full_info
+    @resident = Resident.find(params[:id])
+  end
+
   private
 
   def set_resident
