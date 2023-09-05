@@ -15,7 +15,7 @@
 
 .swal2-confirm.swal2-confirm {
   font-family: $body-font;
-  color: $blue-2;
+  color: $blue-2 !important;
   font-weight: 600 !important;
   border: 1px solid $blue-2 !important;
   background-color: $white !important;
