@@ -9,7 +9,7 @@ export default class extends Controller {
 
     const form = activeItem.querySelector("form")
     const submitBtn = form.querySelector("input[type='submit']")
-
+    console.log("submitted")
     submitBtn.click()
   }
 
