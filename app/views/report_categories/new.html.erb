@@ -2,7 +2,7 @@
   <div class="carousel-inner">
     <% @categories.each_with_index do |category, index| %>
       <div class="carousel-item <%= index == 0 ? 'active' : '' %>" data-report-target="formCarouselItem">
-        <div>
+        <div class=" mx-auto w-75">
           <h1 class="page-title text-center"><%= category.name.capitalize %></h1>
           <%= category.icon.html_safe %>
           <%= simple_form_for [@report, @report_category], html: { report_target: "form" } do |f| %>
@@ -24,7 +24,7 @@
             <%= f.input :additional_informations, label: false, input_html: { placeholder: "Additional information" }, class:"m-5 rounded fixed-bottom mb-3" %>
 
             <% if category == @categories.last %>
-              <%= f.submit "check report", class: "button-primary-2care btn"%>
+              <%= f.submit "Preview report", class: "button-primary-2care btn"%>
             <% else %>
               <%= f.submit "Submit", class: "d-none"%>
             <% end %>
