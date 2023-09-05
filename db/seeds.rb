@@ -120,7 +120,7 @@ care_taker9 = User.create(email: "julia4@gmail.com", password: "123456", first_n
 resident9 = Resident.create(user_id: care_taker9.id, first_name: "kenneth", last_name: "stuen", birth_date: "15/04/1963", clinical_info: "deaf", photography: "ken.png")
 report9 = Report.create(resident_id: resident9.id)
 report_category7 = ReportCategory.create(category: category7, report: report9, option: option20)
-family_member9 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident19id, photography: "antonio.png")
+family_member9 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident9id, photography: "antonio.png")
 
 care_taker10 = User.create(email: "julia5@gmail.com", password: "123456", first_name: "julia", last_name: "coelho", role: "care taker")
 resident10 = Resident.create(user_id: care_taker10.id, first_name: "maria", last_name: "azfal", birth_date: "15/04/1963", clinical_info: "diabetes", photography: "maria.png")
