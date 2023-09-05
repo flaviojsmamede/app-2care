@@ -4,8 +4,23 @@
     <h4><%= @report.created_at.strftime('%e') + @report.created_at.strftime('th %B %Y') %></h4>
     <div class="mt-5">
       <%= render "card_report" %>
+      
       <p><%= link_to "add category", new_report_report_category_path(@report), class: "button-primary-2care btn mt-5 d-none" %></p>
-      <p><%= button_to 'Send', report_send_report_path(@report), method: :post, class: "btn button-primary-2care" %></p>
+      <p><%= button_to 'Send',
+                        report_send_report_path(@report),
+                        method: :post,
+                        data: {
+                          controller: "alert",
+                          action: "click->alert#initSweetalert",
+                          alert_icon_value: "success",
+                          alert_title_value: "Report sent!",
+                          alert_html_value: "The report was saved and sent to the family!",
+                          alert_show_confirm_button_value: "true",
+                          alert_show_cancel_button_value: "true",
+                          alert_cancel_button_text_value: "Close",
+                          alert_confirm_button_text_value: "See report",
+                        },
+                        class: "btn button-primary-2care" %></p>
     </div>
   </div>
 </div>
