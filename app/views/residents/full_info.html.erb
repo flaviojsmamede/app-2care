@@ -2,4 +2,59 @@
   <h1 class="page-title">Full info</h1>
 </div>
 
+<div>
+  <%= image_tag @resident.photography, class: "profile-photo mb-3" %>
+</div>
 
+<div class="row d-flex flex-row ">
+  <div class="col">
+    <div class="d-flex flex-row justify-content-between mb-3 gap-3">
+      <div class="flex-grow-1">
+        <strong><p>First Name</p></strong>
+        <div class="white-button mb-2">
+          <div class="d-flex">
+            <p class="p-2 m-0"><%= @resident.first_name.capitalize %></p>
+          </div>
+        </div>
+      </div>
+      <div class="flex-grow-1">
+        <strong><p>Last Name</p></strong>
+        <div class="white-button mb-2">
+          <div class="d-flex">
+            <p class="p-2 m-0"><%= @resident.last_name.capitalize %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-row justify-content-between">
+      <div>
+        <strong><p>Birth Date</p></strong>
+        <div class="white-button mb-2">
+          <div class="d-flex">
+            <p class="p-2 m-0"><%= @resident.birth_date %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-row justify-content-between mb-3">
+      <div>
+        <strong><p>Clinical Info</p></strong>
+        <div class="white-button mb-2">
+          <div class="d-flex">
+            <p class="p-2 m-0"><%= @resident.clinical_info %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-row justify-content-between">
+      <div>
+        <strong><p>Medicine</p></strong>
+        <div class="white-button mb-2">
+          <div class="d-flex">
+            <p class="p-2 m-0">There's no medicine here yet</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
