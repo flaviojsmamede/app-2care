@@ -20,14 +20,16 @@
   <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title" id="exampleModalLabel">Are you sure you want to leave the report?</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h1 class="modal-title" id="exampleModalLabel">Are you sure you wwant to leave the report?</h1>
+          <%# <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> %>
         </div>
         <div class="modal-body">
         </div>
       <div class="modal-footer">
-        <button type="button" class="white-button" data-bs-dismiss="modal">Go back</button>
-        <button type="button" class="button-primary-2care">Leave</button>
+        <button type="button" class="button-secondary-2care" data-bs-dismiss="modal">Go back</button>
+        <% link_to dashboard_path, class: "button-primary-2care" do %>
+          <button type="button">Leave</button>
+        <% end %>
       </div>
     </div>
   </div>

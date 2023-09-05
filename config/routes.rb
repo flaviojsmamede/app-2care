@@ -13,10 +13,10 @@ Rails.application.routes.draw do
     resources :family_members
   end
 
-  resources :reports, only: [:show, :update] do
+  resources :reports, only: [:show] do
     resources :report_categories, only: [:new, :index, :create, :show]
     post :send_report
   end
 
-  resources :report_categories, only: :update
+  #resources :report_categories, only: :update
 end
