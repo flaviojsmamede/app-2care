@@ -1,6 +1,5 @@
 <%= simple_form_for @report_category do |f| %>
    <div class="mb-3 text-white">
-    <%= f.input :result, label: false, collection: Category.find(@category.id).options.pluck(:name), include_blank: false %>
     <%= f.error :result %>
   </div>
 
@@ -21,7 +20,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title" id="exampleModalLabel">Information</h1>
-          button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
         </div>
