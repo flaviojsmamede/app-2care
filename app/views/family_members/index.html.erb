@@ -2,16 +2,21 @@
   <h1 class="page-title">Contacts</h1>
   <div class="page-title">
     <%= link_to "#" do %>
-      <i class="fa-solid fa-plus"></i>
+      <i class="fa-solid fa-plus d-none"></i>
     <% end %>
   </div>
 </div>
 
-<%#= if FamilyMembers.count == 0 %>
+<% if @family_members.count == 0 %>
 
-  <%# <h1>TEST</h1> %>
+    <h3 class="grey-empty-text">There are no contacts yet for <%= @resident.first_name.capitalize %>
+    <br>
+    <i class="fa-regular fa-face-frown"></i>
+    </h3>
 
-<%# else %>
+    <%= link_to "Add contact", "#", class: "button-primary-2care" %>
+
+<% else %>
 
   <div class="row">
     <% @family_members.each do |family_member| %>
@@ -23,4 +28,4 @@
     <% end %>
   </div>
 
-<%# end %>
+<% end %>

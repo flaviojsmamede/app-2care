@@ -1,8 +1,24 @@
 <div>
   <h1 class="page-title">Reports</h1>
 </div>
-<% @reports.each do |report| %>
-  <%= link_to report_path(report) do %>
-    <p class="button-secondary-2care"><%= report.created_at.strftime('%e') + report.created_at.strftime('th %B %Y')%></p>
+
+
+
+
+<% if @reports.count == 0 %>
+
+  <h3 class="grey-empty-text">There are no reports yet for <%= @resident.first_name.capitalize %>
+    <br>
+    <i class="fa-regular fa-face-frown"></i>
+  </h3>
+<%= render "reports/form_report", resident: @resident, report: @report, report_category: @report_category %>
+
+<% else %>
+
+  <% @reports.each do |report| %>
+    <%= link_to report_path(report) do %>
+      <p class="button-secondary-2care"><%= report.created_at.strftime('%e') + report.created_at.strftime('th %B %Y')%></p>
+    <% end %>
   <% end %>
+
 <% end %>

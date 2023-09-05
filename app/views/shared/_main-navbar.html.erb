@@ -22,6 +22,10 @@
 
       <h2 class="navbar-text"><%= @report.resident.first_name.capitalize %>'s Report</h2>
 
+    <% elsif controller_name == "reports" %>
+
+      <h2 class="navbar-text"><%= @resident.first_name.capitalize %>'s Report</h2>
+
     <% else %>
 
       <%= link_to dashboard_path, class: "logo" do %>

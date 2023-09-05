@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'account', to: 'pages#account'
 
   resources :residents do
+    member do
+      get :full_info
+    end
     resources :reports, only: [:index, :create]
     resources :family_members
   end
