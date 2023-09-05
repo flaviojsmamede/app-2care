@@ -1,13 +1,31 @@
-<div>
+<div class= "d-flex justify-content-between align-items-baseline">
   <h1 class="page-title">Contacts</h1>
+  <div class="page-title">
+    <%= link_to "#" do %>
+      <i class="fa-solid fa-plus d-none"></i>
+    <% end %>
+  </div>
 </div>
 
-<div class="row">
-  <% @family_members.each do |family_member| %>
-      <%= link_to resident_family_member(resident) do %>
-        <div class="col mb-3">
-          <%= render "resident_card", resident: resident %>
-        </div>
+<% if @family_members.count == 0 %>
+
+    <h3 class="grey-empty-text">There are no contacts yet for <%= @resident.first_name.capitalize %>
+    <br>
+    <i class="fa-regular fa-face-frown"></i>
+    </h3>
+
+    <%= link_to "Add contact", "#", class: "button-primary-2care" %>
+
+<% else %>
+
+  <div class="row">
+    <% @family_members.each do |family_member| %>
+        <%= link_to resident_family_member_path(@resident, family_member) do %>
+          <div class="col mb-3">
+            <%= render "family_member_card", family_member: family_member %>
+          </div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+
+<% end %>

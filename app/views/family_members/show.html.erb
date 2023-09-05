@@ -1,19 +1,14 @@
 <div class= "d-flex justify-content-between align-items-baseline">
-  <h1 class="page-title">My Account</h1>
+  <h1 class="page-title"><%= @family_member.first_name.capitalize %></h1>
   <div class="page-title">
-    <%= link_to edit_user_registration_path do %>
-      <i class="fa-solid fa-pen-to-square"></i>
-    <% end %>
+    <%#= link_to edit_user_registration_path do %>
+      <%# <i class="fa-solid fa-pen-to-square"></i> %>
+    <%# end %>
   </div>
 </div>
 
 <div>
-  <% if current_user.photography.present? %>
-    <%#= cl_image_tag resident.photo.key, crop: :fill %>
-    <%= image_tag current_user.photography, class: "profile-photo mb-3"%>
-  <% else %>
-    <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", crop: :fill, class: "profile-photo mb-3" %>
-  <% end %>
+  <%= image_tag @family_member.photography, class: "profile-photo mb-3" %>
 </div>
 
 <div class="row d-flex flex-row ">
@@ -23,7 +18,7 @@
         <strong><p>First Name</p></strong>
         <div class="white-button mb-2">
           <div class="d-flex">
-            <p class="p-2 m-0"><%= current_user.first_name.capitalize %></p>
+            <p class="p-2 m-0"><%= @family_member.first_name.capitalize %></p>
           </div>
         </div>
       </div>
@@ -31,7 +26,17 @@
         <strong><p>Last Name</p></strong>
         <div class="white-button mb-2">
           <div class="d-flex">
-            <p class="p-2 m-0"><%= current_user.last_name.capitalize %></p>
+            <p class="p-2 m-0"><%= @family_member.last_name.capitalize %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-row justify-content-between">
+      <div>
+        <strong><p>Relationship</p></strong>
+        <div class="white-button mb-2">
+          <div class="d-flex">
+            <p class="p-2 m-0"><%= @family_member.relationship.capitalize %></p>
           </div>
         </div>
       </div>
@@ -41,24 +46,20 @@
         <strong><p>Email</p></strong>
         <div class="white-button mb-2">
           <div class="d-flex">
-            <p class="p-2 m-0"><%= current_user.email %></p>
+            <p class="p-2 m-0"><%= @family_member.email %></p>
           </div>
         </div>
       </div>
     </div>
     <div class="flex-row justify-content-between">
       <div>
-        <strong><p>Password</p></strong>
+        <strong><p>Phone number</p></strong>
         <div class="white-button mb-2">
           <div class="d-flex">
-            <p class="p-2 m-0">*********</p>
+            <p class="p-2 m-0"><%= @family_member.phone_number %></p>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div>
-
-  <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class:"button-danger-2care my-3" %>
 </div>

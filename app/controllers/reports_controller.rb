@@ -21,9 +21,32 @@ class ReportsController < ApplicationController
     end
   end
 
+  def update
+    @report = Report.find(params[:id])
+    if @report.update(send_status: true)
+      redirect_to report_path(@report), notice: 'Report was sent successfully.'
+    else
+      render "report/show"
+    end
+  end
+
+  # send the email with the report
+  def send_report
+    @report = Report.find(params[:report_id])
+    @report.resident.family_members.each do |family_member|
+      ReportMailer.email_report(family_member, @report.resident).deliver_now
+    end
+
+    redirect_to report_path(@report), notice: "report sent"
+  end
+
   private
 
   def set_report
     @report = Report.find(params[:id])
+  end
+
+  def report_params
+    params.require(:report).permit(:send_status)
   end
 end

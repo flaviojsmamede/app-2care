@@ -1,11 +1,49 @@
-<div class="page-title">
-  <%= simple_form_for [@report, @report_category] do |f| %>
-    <%= f.association :category, include_blank: false %>
-    <div class="form-actions">
-      <%= f.button :submit, "Add", class: "button-primary-2care"%>
-    </div>
-  <% end %>
+<div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="999999" data-controller="report" data-action="slide.bs.carousel->report#callSubmit">
+  <div class="carousel-inner">
+    <% @categories.each_with_index do |category, index| %>
+      <div class="carousel-item <%= index == 0 ? 'active' : '' %>" data-report-target="formCarouselItem">
+        <div>
+          <h1 class="page-title text-center"><%= category.name.capitalize %></h1>
+          <%= category.icon.html_safe %>
+          <%= simple_form_for [@report, @report_category], html: { report_target: "form" } do |f| %>
+            <% category.options.each_with_index do |option, option_index| %>
+              <div class="option-wrapper option-<%= option_index %> d-flex align-items-center">
+                <%= f.input :option_id, as: :radio_buttons, legend_tag: false, collection: [[option.name, option_index]], include_blank: false, input_html: { class: "d-none" }, item_label_class: "option" %>
+                <% case option %>
+                  <% when category.options[0]%>
+                  <h2><i class="fa-regular fa-face-smile"></i></h2>
+                  <% when  category.options[1]%>
+                  <h2><i class="fa-regular fa-face-meh"></i></h2>
+                  <% when  category.options[2]%>
+                  <h2><i class="fa-regular fa-face-frown"></i></h2>
+                <% end %>
+              </div>
+            <% end %>
 
-      <p><%= link_to "check report", report_path(@report), class:"button-primary-2care btn mt-2" %></p>
+            <%= f.input :category_id, as: :hidden, input_html: { value: category.id } %>
+            <%= f.input :additional_informations, label: false, input_html: { placeholder: "Additional information" } %>
 
+            <% if category == @categories.last %>
+              <%= f.submit "check report", class: "button-primary-2care btn mt-2"%>
+            <% else %>
+              <%= f.submit "Submit", class: "d-none"%>
+            <% end %>
+          <% end %>
+        </div>
+        <% unless category == @categories.first %>
+          <a class="carousel-control-prev" href="#categoryCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+        <% end %>
+
+        <% unless category == @categories.last %>
+          <a class="carousel-control-next" href="#categoryCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </a>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>

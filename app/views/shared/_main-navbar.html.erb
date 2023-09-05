@@ -6,15 +6,45 @@
     <div class="icon-div-left">
       <i class="fa-solid fa-arrow-left"></i>
     </div>
-    <% if controller_name == "reports" && action_name == "new" %>
-      <%# TODO: The name needs to be dynamic with the resident's first name %>
-       <h2 class="navbar-text">Antonio's Report</h2>
+  <% end %>
+
+    <% if controller_name == "family_members" && action_name == "index" || (controller_name == "reports" && action_name == "index")  %>
+
+      <%= link_to resident_path(@resident.id), class: "navbar-text" do %>
+        <h2><%= @resident.first_name.capitalize %> <%= @resident.last_name.capitalize %></h2>
+      <% end %>
+
+    <% elsif controller_name == "family_members" && action_name == "show" %>
+
+        <h2 class="navbar-text"><%= @resident.first_name.capitalize %>'s <%= @family_member.relationship %></h2>
+
+    <% elsif controller_name == "report_categories" || controller_name == "reports" %>
+
+      <h2 class="navbar-text"><%= @report.resident.first_name.capitalize %>'s Report</h2>
+
+    <% elsif controller_name == "reports" %>
+
+      <h2 class="navbar-text"><%= @resident.first_name.capitalize %>'s Report</h2>
+
     <% else %>
+
       <%= link_to dashboard_path, class: "logo" do %>
         <%= image_tag "logo2care.png", alt: "logo 2 care", class: "logo" %>
       <% end %>
+
     <% end %>
-  <% end %>
   <%# TODO: this icon only appears on the report creation and it will LINK to a modal %>
   <%# to confirm if the user really wants to leave the report %>
+
+  <% if controller_name == "report_categories" %>
+    <div class="icon-div-right">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+  <% else %>
+    <%= link_to "#" do %>
+      <div class="icon-div-right">
+        <i class="fa-solid fa-xmark d-none"></i>
+      </div>
+    <% end %>
+  <% end %>
 </div>
