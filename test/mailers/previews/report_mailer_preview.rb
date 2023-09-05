@@ -6,7 +6,7 @@ class ReportMailerPreview < ActionMailer::Preview
   def email_report
     family_member = FamilyMember.first
     resident = Resident.first
-    # report = Report.first
-    ReportMailer.email_report(family_member, resident)
+    report = Report.first
+    ReportMailer.email_report(family_member, resident, report)
   end
 end
