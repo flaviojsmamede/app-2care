@@ -1,6 +1,12 @@
 <div class="menu-bar">
 
-  <% if controller_name == "pages" && action_name == "dashboard" %>
+  <% if controller_name == "report_categories" || controller_name == "reports" && action_name == "show" %>
+
+    <div>
+
+    </div>
+
+  <% elsif controller_name == "pages" && action_name == "dashboard" %>
 
     <%= render "shared/menu-bar-dashboard" %>
 
@@ -12,8 +18,7 @@
 
     <%= render "shared/menu-bar-chat" %>
 
-
-  <% elsif controller_name == "" && action_name == "" %>
+  <% elsif controller_name == "pages" && action_name == "account" %>
 
     <%= render "shared/menu-bar-account" %>
 

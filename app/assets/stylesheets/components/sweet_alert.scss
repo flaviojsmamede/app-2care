@@ -1,0 +1,30 @@
+.swal2-cancel.swal2-cancel{
+  font-family: $body-font;
+  color: $white !important;
+  font-weight: 600 !important;
+  background-color: $blue-2 !important;
+  border-radius: 10px !important;
+  padding: 4%;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  box-shadow: 0px 5px 5px 0px rgba(0, 156, 170, 0.20);
+
+
+}
+
+.swal2-confirm.swal2-confirm {
+  font-family: $body-font;
+  color: $blue-2 !important;
+  font-weight: 600 !important;
+  border: 1px solid $blue-2 !important;
+  background-color: $white !important;
+  border-radius: 10px !important;
+  padding: 4% !important;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  box-shadow: 0px 5px 5px 0px rgba(0, 156, 170, 0.20);
+
+}
+

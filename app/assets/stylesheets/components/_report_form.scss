@@ -7,13 +7,16 @@
 }
 
 .report-border {
-  width: 240px;
-  height: 60px;
-  padding: 15px 20px;
+  width: 80%;
+  padding: 4%;
   border-radius: 10px;
   background: $white;
   box-shadow: 0px 5px 5px 0px rgba(142, 159, 78, 0.20);
   border: 2px solid $green;
+
+  h2 {
+    margin: 0;
+  }
 }
 
 .option-wrapper {
@@ -83,4 +86,28 @@
 .form-check {
   padding-left: 0;
   margin-bottom: 0;
+}
+
+
+.carousel-inner i{
+  color: $blue-2;
+  opacity: 0.5;
+  font-size: 60px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.grey-empty-text {
+  color: $blue-2;
+  opacity: 0.25;
+  font-size: 40px;
+  padding: 40px;
+  text-align: center;
+
+  i {
+    font-size: 90px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }

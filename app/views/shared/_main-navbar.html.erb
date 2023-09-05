@@ -1,26 +1,25 @@
-<div class="main-navbar">
+<div class="main-navbar position-relative justify-content-<%= (controller_name == "report_categories" && action_name =="new") ? "end" : "between" %>">
   <%#= link_to :request.referrer do %>
-  <%= link_to :back do %>
+  <%= render "shared/navbar_back_btn" %>
   <%#= link_to 'javascript:history.back()' do %>
 
-    <div class="icon-div-left">
-      <i class="fa-solid fa-arrow-left"></i>
-    </div>
-  <% end %>
-
-    <% if controller_name == "family_members" && action_name == "index" %>
+    <% if controller_name == "family_members" && action_name == "index" || (controller_name == "reports" && action_name == "index")  %>
 
       <%= link_to resident_path(@resident.id), class: "navbar-text" do %>
-        <h2><%= @resident.first_name.capitalize %> <%= @resident.last_name.capitalize %></h2>
+        <h2><%= @resident.first_name.capitalize %></h2>
       <% end %>
 
     <% elsif controller_name == "family_members" && action_name == "show" %>
 
         <h2 class="navbar-text"><%= @resident.first_name.capitalize %>'s <%= @family_member.relationship %></h2>
 
-    <% elsif controller_name == "report_categories" || controller_name == "reports"%>
+    <% elsif controller_name == "report_categories" || (controller_name == "reports" && action_name == "show") %>
 
       <h2 class="navbar-text"><%= @report.resident.first_name.capitalize %>'s Report</h2>
+
+    <% elsif controller_name == "reports" %>
+
+      <h2 class="navbar-text"><%= @resident.first_name.capitalize %>'s Report</h2>
 
     <% else %>
 
@@ -33,7 +32,15 @@
   <%# to confirm if the user really wants to leave the report %>
 
   <% if controller_name == "report_categories" %>
-    <div class="icon-div-right">
+    <div class="icon-div-right"
+          data-controller="alert"
+          data-action="click->alert#initSweetalert"
+          data-alert-icon-value="warning"
+          data-alert-title-value="Warning!"
+          data-alert-html-value="Are you sure you want to leave the report?"
+          data-alert-show-confirm-button-value="false"
+          data-alert-show-cancel-button-value="true"
+          data-alert-cancel-button-text-value="Close" >
       <i class="fa-solid fa-xmark"></i>
     </div>
   <% else %>
