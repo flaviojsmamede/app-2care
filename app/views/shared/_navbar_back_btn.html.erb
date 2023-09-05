@@ -4,9 +4,9 @@
     <% back_path = dashboard_path %>
   <% elsif (controller_name == "residents" && action_name == "show") %>
     <% back_path = residents_path %>
-  <% elsif (controller_name == "residents" && action_name == "full_info") || (controller_name == "family_members" && action_name == "index") || (controller_name == "reports" && action_name == "show") %>
+  <% elsif (controller_name == "residents" && action_name == "full_info") || (controller_name == "family_members" && action_name == "show") || (controller_name == "reports" && action_name == "show") %>
     <% back_path = :back %>
-  <% elsif (controller_name == "reports" && action_name == "index") %>
+  <% elsif (controller_name == "reports" && action_name == "index") || (controller_name == "family_members" && action_name == "index")%>
     <% back_path = resident_path(@resident) %>
   <% end %>
 
