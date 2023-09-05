@@ -2,19 +2,19 @@
   <div class="carousel-inner">
     <% @categories.each_with_index do |category, index| %>
       <div class="carousel-item <%= index == 0 ? 'active' : '' %>" data-report-target="formCarouselItem">
-        <div class="page-title">
+        <div class="report-category">
           <h1><%= category.name %></h1>
           <%= simple_form_for [@report, @report_category], html: { report_target: "form" } do |f| %>
             <% category.options.each_with_index do |option, option_index| %>
-              <div class="option-wrapper option-<%= option_index %> d-flex align-items-center">
-                <%= f.input :option_id, as: :radio_buttons, legend_tag: false, collection: [[option.name, option_index]], include_blank: false, input_html: { class: "d-none" }, item_label_class: "option" %>
+              <div class="option-wrapper option-<%= option_index %>">
+                <%= f.input :option_id, as: :radio_buttons, legend_tag: false, collection: [[option.name.capitalize, option_index]], include_blank: false, input_html: { class: "d-none" }, item_label_class: "option" %>
                 <% case option %>
                   <% when category.options[0]%>
-                  <h2><i class="fa-regular fa-face-smile"></i></h2>
+                  <h2><i class="fa-regular fa-face-smile success"></i></h2>
                   <% when  category.options[1]%>
-                  <h2><i class="fa-regular fa-face-meh"></i></h2>
+                  <h2><i class="fa-regular fa-face-meh info"></i></h2>
                   <% when  category.options[2]%>
-                  <h2><i class="fa-regular fa-face-frown"></i></h2>
+                  <h2><i class="fa-regular fa-face-frown danger"></i></h2>
                 <% end %>
               </div>
             <% end %>
