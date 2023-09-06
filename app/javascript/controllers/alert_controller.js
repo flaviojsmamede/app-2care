@@ -9,11 +9,22 @@ export default class extends Controller {
     showConfirmButton: String,
     showCancelButton: String,
     cancelButtonText: String,
-    confirmButtonText: String
+    confirmButtonText: String,
+    submit: String
   }
 
   initSweetalert(event) {
     event.preventDefault(); // Prevent the form to be submited after the submit button has been clicked
+
+    if (this.submitValue === "true") {
+      const url = this.element.parentNode.action
+
+      fetch(url, {
+        method: "POST",
+        body: new FormData(this.element.parentNode)
+      })
+    }
+
     Swal.fire({
       position: 'middle',
       icon: this.iconValue,
@@ -30,11 +41,12 @@ export default class extends Controller {
         cancelButton: 'swal2-cancel',
         cancelButton: 'swal2-confirm'
       }
-    }).then((action) => {
+    })
+      .then((action) => {
         if (action.isConfirmed) {
-          event.target[event.type]();
-        }
-        })
+          event.target[event.type]()
+        }})
         .catch(event.preventDefault())
+
       }
-      }
+}
