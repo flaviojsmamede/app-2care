@@ -91,6 +91,7 @@ names = [
   "Camila Henriquez",
   "David Carmo",
   "Filipa Merino",
+
   "Francisco Serralheiro",
   "Isabelle Ferrier",
   "Joao Sanches",
@@ -148,13 +149,69 @@ names.each_with_index do |full_name, i|
   # resident.family_members << antonio
 end
 
+care_taker28 = User.create(email: "flavio16@gmail.com", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
+resident1 = Resident.create(user_id: care_taker28.id, first_name: "Pedro", last_name: "Agostinho", birth_date: "15/04/1963", clinical_info: "Diabetes", photography: "residents/pedro.png")
+family_member28 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident1.id, photography: "residents/antonio.png")
+
+care_taker27 = User.create(email: "flavio15@gmail.com", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
+resident2 = Resident.create(user_id: care_taker27.id, first_name: "Miguel", last_name: "Figueiredo", birth_date: "15/04/1963", clinical_info: "Ok?", photography: "residents/miguel.png")
+family_member27 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident2.id, photography: "residents/antonio.png")
+
+care_taker26 = User.create(email: "flavio14@gmail.com", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
+resident3 = Resident.create(user_id: care_taker26.id, first_name: "Chiara", last_name: "Biasi", birth_date: "15/04/1963", clinical_info: "Migraine", photography: "residents/chiara.png")
+family_member26 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident3.id, photography: "residents/antonio.png")
+
+care_taker25 = User.create(email: "flavio13@gmail.com", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
+resident4 = Resident.create(user_id: care_taker25.id, first_name: "Henrique", last_name: "Albuquerque", birth_date: "15/04/1963", clinical_info: "Hypertension", photography: "residents/henrique.png")
+family_member25 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident4.id, photography: "residents/antonio.png")
+
+care_taker24 = User.create(email: "flavio12@gmail.com", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
+resident5 = Resident.create(user_id: care_taker24.id, first_name: "Gabriel", last_name: "Fernandes", birth_date: "15/04/1963", clinical_info: "Can't spell", photography: "residents/gabriel.png")
+family_member24 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident5.id, photography: "residents/antonio.png")
+
+care_taker23 = User.create(email: "flavio11@gmail.com", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
+resident6 = Resident.create(user_id: care_taker23.id, first_name: "Andre", last_name: "Marques", birth_date: "15/04/1963", clinical_info: "Healthy", photography: "residents/andre.png")
+family_member23 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident6.id, photography: "residents/antonio.png")
+
+care_taker22 = User.create(email: "flavio10@gmail.com", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
+resident7 = Resident.create(user_id: care_taker22.id, first_name: "Andre", last_name: "Pires", birth_date: "15/04/1963", clinical_info: "Deaf", photography: "residents/andré.png")
+family_member22 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident7.id, photography: "residents/antonio.png")
+
+care_taker21 = User.create(email: "flavio9@gmail.com", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
+resident8 = Resident.create(user_id: care_taker21.id, first_name: "Camila", last_name: "Henriquez", birth_date: "15/04/1963", clinical_info: "Hypertension", photography: "residents/camila.png")
+family_member21 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident8.id, photography: "residents/antonio.png")
+
+care_taker20 = User.create(email: "flavio8@gmail.com", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
+resident9 = Resident.create(user_id: care_taker20.id, first_name: "David", last_name: "Carmo", birth_date: "15/04/1963", clinical_info: "Osteoporosis", photography: "residents/david.png")
+family_member20 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident9.id, photography: "residents/antonio.png")
+
+care_taker19 = User.create(email: "flavio7@gmail.com", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
+resident10 = Resident.create(user_id: care_taker19.id, first_name: "Filipa", last_name: "Merino", birth_date: "15/04/1963", clinical_info: "Alzheimer", photography: "residents/filipa.png")
+family_member19 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident10.id, photography: "residents/antonio.png")
+
+care_taker18 = User.create(email: "flavio6@gmail.com", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
+resident11 = Resident.create(user_id: care_taker18.id, first_name: "Francisco", last_name: "Serralheiro", birth_date: "15/04/1963", clinical_info: "Kidney Disease", photography: "residents/francisco.png")
+family_member18 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident11.id, photography: "residents/antonio.png")
+
+care_taker17 = User.create(email: "flavio5@gmail.com", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
+resident12 = Resident.create(user_id: care_taker17.id, first_name: "Isabelle", last_name: "Ferrier", birth_date: "15/04/1963", clinical_info: "Asthma", photography: "residents/isabelle.png")
+family_member17 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident12.id, photography: "residents/antonio.png")
+
+care_taker16 = User.create(email: "flavio4@gmail.com", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
+resident13 = Resident.create(user_id: care_taker16.id, first_name: "Joao", last_name: "Sanches", birth_date: "15/04/1963", clinical_info: "Blind", photography: "residents/joao.png")
+family_member16 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident13.id, photography: "residents/antonio.png")
+
+care_taker15 = User.create(email: "flavio3@gmail.com", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
+resident14 = Resident.create(user_id: care_taker15.id, first_name: "Magarida", last_name: "Toureiro", birth_date: "15/04/1963", clinical_info: "Arthritis", photography: "residents/magarida.png")
+family_member15 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident14.id, photography: "residents/antonio.png")
+
 care_taker14 = User.create(email: "flavio2@gmail.com", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
 resident15 = Resident.create(user_id: care_taker14.id, first_name: "Rita", last_name: "Laia", birth_date: "15/04/1963", clinical_info: "Insomnia", photography: "residents/rita.png")
-family_member1 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident15.id, photography: "residents/antonio.png")
+family_member14 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident15.id, photography: "residents/antonio.png")
 
 care_taker13 = User.create(email: "flavio1@gmail.com", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
 resident16 = Resident.create(user_id: care_taker13.id, first_name: "samuel", last_name: "ven", birth_date: "15/04/1963", clinical_info: "Insomnia", photography: "residents/samuel.png")
-family_member1 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident16.id, photography: "residents/antonio.png")
+family_member13 = FamilyMember.create(first_name: "antonio", last_name: "quaresma", phone_number: "966666666", email: "tozequa@gmail.com", address: "Rua da Alegria, 123", relationship: "son", resident_id: resident16.id, photography: "residents/antonio.png")
 
 care_taker1 = User.create(email: "flavio@gmail.com", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
 resident17 = Resident.create(user_id: care_taker1.id, first_name: "nuno", last_name: "cassandra", birth_date: "15/04/1963", clinical_info: "Migraine", photography: "residents/nuno.png")
