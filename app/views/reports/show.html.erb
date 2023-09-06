@@ -6,9 +6,10 @@
       <%= render "card_report" %>
 
       <p><%= link_to "add category", new_report_report_category_path(@report), class: "button-primary-2care btn mt-5 d-none" %></p>
-      <p><%= button_to 'Send',
+      <p><%= button_to @report.send_status ? "Report sent" : 'Send',
                         report_send_report_path(@report),
                         method: :post,
+                        disabled: @report.send_status,
                         data: {
                           controller: "alert",
                           action: "click->alert#initSweetalert",
