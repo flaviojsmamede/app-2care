@@ -2,17 +2,41 @@
     <% category_option = report_category.category.options %>
     <% case  report_category.option.name %>
       <% when category_option.first.name %>
-        <div class="d-flex justify-content-between align-items-center report-border mb-2 option-1 mx-auto">
+        <div class="d-flex justify-content-between align-items-center report-border mb-2 option-1 mx-auto"
+              data-controller="alert"
+              data-action="click->alert#initSweetalert"
+              data-alert-title-value="Information"
+              data-alert-html-value="<%= report_category.additional_informations.present? ? report_category.additional_informations : "No additional information recorded." %>"
+              data-alert-show-confirm-button-value="false"
+              data-alert-show-cancel-button-value="true"
+              data-alert-cancel-button-text-value="Close"
+              data-alert-icon-html-value="<%= report_category.category.icon %>">
           <h2 class="option-1"><%= report_category.category.name %></h2>
           <h2><i class="fa-regular fa-face-smile option-1"></i></h2>
         </div>
       <% when category_option.second.name %>
-        <div class="d-flex justify-content-between align-items-center report-border mb-2 option-2 mx-auto">
+        <div class="d-flex justify-content-between align-items-center report-border mb-2 option-2 mx-auto"
+              data-controller="alert"
+              data-action="click->alert#initSweetalert"
+              data-alert-title-value="Information"
+              data-alert-html-value="<%= report_category.additional_informations.present? ? report_category.additional_informations : "No additional information recorded." %>"
+              data-alert-show-confirm-button-value="false"
+              data-alert-show-cancel-button-value="true"
+              data-alert-cancel-button-text-value="Close"
+              data-alert-icon-html-value="<%= report_category.category.icon %>">
           <h2 class="option-2"><%= report_category.category.name %></h2>
           <h2><i class="fa-regular fa-face-meh option-2"></i></h2>
         </div>
       <% when category_option.third.name %>
-        <div class="d-flex justify-content-between align-items-center report-border mb-2 option-3 mx-auto">
+        <div class="d-flex justify-content-between align-items-center report-border mb-2 option-3 mx-auto"
+              data-controller="alert"
+              data-action="click->alert#initSweetalert"
+              data-alert-title-value="Information"
+              data-alert-html-value="<%= report_category.additional_informations.present? ? report_category.additional_informations : "No additional information recorded." %>"
+              data-alert-show-confirm-button-value="false"
+              data-alert-show-cancel-button-value="true"
+              data-alert-cancel-button-text-value="Close"
+              data-alert-icon-html-value="<%= report_category.category.icon %>">
           <h2 class="option-3"><%= report_category.category.name %></h2>
           <h2><i class="fa-regular fa-face-frown option-3"></i></h2>
         </div>

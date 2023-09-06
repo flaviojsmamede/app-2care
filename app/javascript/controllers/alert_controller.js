@@ -11,7 +11,8 @@ export default class extends Controller {
     cancelButtonText: String,
     confirmButtonText: String,
     url: String,
-    submit: String
+    submit: String,
+    iconHtml: String
   }
 
   initSweetalert(event) {
@@ -26,9 +27,10 @@ export default class extends Controller {
       })
     }
 
-    Swal.fire({
+    const swalOptions = {
       position: 'middle',
-      icon: this.iconValue,
+      // icon: this.iconValue,
+      //iconHtml: "<i class='fa-brands fa-facebook'></i>",
       title: this.titleValue,
       text: this.htmlValue,
       showConfirmButton: this.showConfirmButtonValue === "true",
@@ -42,7 +44,16 @@ export default class extends Controller {
         cancelButton: 'swal2-cancel',
         cancelButton: 'swal2-confirm'
       }
-    })
+    }
+
+    if (this.iconHtmlValue === '') {
+      swalOptions.icon = this.iconValue
+    } else {
+      swalOptions.iconHtml = this.iconHtmlValue
+      swalOptions.customClass.icon = "icon-custom-sweetalert"
+    }
+
+    Swal.fire(swalOptions)
       .then((action) => {
         if (action.isConfirmed) {
           window.location.href = this.urlValue;
@@ -50,7 +61,7 @@ export default class extends Controller {
         }})
       .catch(event.preventDefault())
 
-    if (this.iconValue !== "warning") {
+    if (this.iconValue !== "warning" && this.iconValue !== "") {
       event.target.setAttribute("disabled", "")
       event.target.innerText = "Report sent!"
     }
