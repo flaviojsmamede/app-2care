@@ -21,14 +21,14 @@ class ReportsController < ApplicationController
     end
   end
 
-  def update
-    @report = Report.find(params[:id])
-    if @report.update(send_status: true)
-      redirect_to report_path(@report), notice: 'Report was sent successfully.'
-    else
-      render "report/show"
-    end
-  end
+  # def update
+  #   @report = Report.find(params[:id])
+  #   if @report.update(send_status: true)
+  #     redirect_to report_path(@report), notice: 'Report was sent successfully.'
+  #   else
+  #     render "report/show"
+  #   end
+  # end
 
   # send the email with the report
   def send_report
@@ -37,7 +37,7 @@ class ReportsController < ApplicationController
       ReportMailer.email_report(family_member, @report.resident, @report).deliver_now
     end
     @report.send_status = true
-    redirect_to report_path(@report), notice: "report sent"
+    @report.save
   end
 
   private

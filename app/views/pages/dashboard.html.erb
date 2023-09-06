@@ -30,13 +30,19 @@
 <%= link_to residents_path do %>
   <div class="d-flex justify-content-around profile-card p-3 mb-3 align-items-center">
     <div class="d-flex flex-column align-items-center profile-card-info">
-      <h5>Reports done</h5>
+      <h5>Reports sent</h5>
 
       <% @reports = Report.all %>
       <% reports_sent = @reports.select { |report| report.send_status == true } %>
 
+      <h1>
+      <% if reports_sent.count > Resident.count %>
+        <%= Resident.count %>
+      <% else %>
+        <%= reports_sent.count %>
+      <% end %>/<%= Resident.count %>
+      </h1>
 
-      <h1><%= reports_sent.count %>/<%= Resident.count %></h1>
     </div>
     <%= image_tag("reports-illustration.png", alt: "reports illustration")  %>
   </div>

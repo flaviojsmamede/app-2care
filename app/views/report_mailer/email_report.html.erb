@@ -1,32 +1,40 @@
 <style>
   body{
     font-family: sans-serif;
-    background-color: green;
+    /* background-color: green;
 
     p{
     color: blue;
-    }
+    } */
   }
 </style>
 
 <body>
-  <h3>Hello Mr <%= "#{@family_member.first_name.capitalize} #{@family_member.last_name.capitalize}"%>!</h3>
-
-  <h4>Daily Report 📑: <%= @report.created_at.strftime('%e') + @report.created_at.strftime('th %B %Y') %></h4>
+  <h3>Dear Mr <%= "#{@family_member.first_name.capitalize} #{@family_member.last_name.capitalize}"%>,</h3>
 
   <p>This is your daily report for your relative <strong><%= "#{@resident.first_name.capitalize} #{@resident.last_name.capitalize}" %>. 👴</strong></p>
+
+  <h4>Daily Report 📑: <%= @report.created_at.strftime('%e') + @report.created_at.strftime('th %B %Y') %></h4>
 
   <ul>
     <% @report.report_categories.each do |report_category| %>
         <% category_option = report_category.category.options %>
         <% case  report_category.option.name %>
           <% when category_option.first.name %>
-            <li><h2><%= report_category.category.name.capitalize %> : <%= report_category.option.name.capitalize %></h2></li>
+            <li><h3><%= report_category.category.name.capitalize %> : <%= report_category.option.name.capitalize %></h3></li>
           <% when category_option.second.name %>
-            <li><h2><%= report_category.category.name.capitalize %> : <%= report_category.option.name.capitalize %></h2></li>
+            <li><h3><%= report_category.category.name.capitalize %> : <%= report_category.option.name.capitalize %></h3></li>
           <% when category_option.third.name %>
-            <li><h2><%= report_category.category.name.capitalize %> : <%= report_category.option.name.capitalize %></h2></li>
+            <li><h3><%= report_category.category.name.capitalize %> : <%= report_category.option.name.capitalize %></h3></li>
         <% end %>
     <% end %>
   </ul>
 </body>
+
+<br>
+
+<p>Please contact us in case you need any extra information about your relative.</p>
+
+<p>Kind Regards,</p>
+<p>2Care Management</p>
+<p>* Keeping families informed *</p>

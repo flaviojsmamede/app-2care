@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   def search
     @user = current_user
 
-    # @residents = Resident.all
+    @residents = []
 
     if params[:query].present?
       search_query = params[:query].strip # Remove leading/trailing spaces
@@ -21,8 +21,6 @@ class PagesController < ApplicationController
         OR residents.last_name ILIKE :query
       SQL
       @residents = Resident.where(sql_query, query: "%#{search_query}%")
-    else
-      @residents = Resident.all
     end
   end
 
