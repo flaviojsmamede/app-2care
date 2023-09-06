@@ -3,6 +3,3 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "@popperjs/core"
 import "bootstrap"
-
-import AlertController from "./controllers/alert_controller.js"
-Stimulus.register("alert", AlertController)
