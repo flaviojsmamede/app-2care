@@ -1,0 +1,5 @@
+meta_name: "2Care"
+meta_title: "2Care - Keeping Families Informed"
+meta_description: "Receive daily reports from your elder relative on our care."
+meta_image: "meta-img.png" # should exist in `app/assets/images/`
+# twitter_account: "@your_twitter_account"   # required for Twitter Cards
