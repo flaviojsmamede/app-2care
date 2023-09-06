@@ -37,7 +37,15 @@
 .card-info-green {
   color: $green;
 
-  h2 {
+  h4 {
+    margin-bottom: 0;
+  }
+}
+
+.card-info-yellow {
+  color: $yellow;
+
+  h4 {
     margin-bottom: 0;
   }
 }
@@ -45,13 +53,12 @@
 .card-info-red {
   color: $red;
 
-  h2 {
+  h4 {
     margin-bottom: 0;
   }
 }
 
 
 .big-icon {
-  font-size: 25px;
+  font-size: 22px;
 }
-

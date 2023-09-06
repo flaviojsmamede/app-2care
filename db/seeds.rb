@@ -31,8 +31,8 @@ option3 = Option.create(name: "bad", category: category1)
 category2 = Category.create(name: "eat", icon: '<i class="fa-solid fa-utensils"></i>')
 
 option4 = Option.create(name: "good", category: category2)
-option5 =Option.create(name: "medium", category: category2)
-option6 =Option.create(name: "bad", category: category2)
+option5 = Option.create(name: "medium", category: category2)
+option6 = Option.create(name: "bad", category: category2)
 
 category3 = Category.create(name: "humour", icon: '<i class="fa-solid fa-masks-theater"></i>')
 
