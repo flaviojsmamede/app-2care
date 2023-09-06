@@ -27,7 +27,7 @@
 
 <h3 class="blue-text">Today: </h3>
 
-<%= link_to residents_path do %>
+<%#= link_to residents_path do %>
   <div class="d-flex justify-content-around profile-card p-3 mb-3 align-items-center">
     <div class="d-flex flex-column align-items-center profile-card-info">
       <h5>Reports sent</h5>
@@ -46,7 +46,6 @@
     </div>
     <%= image_tag("reports-illustration.png", alt: "reports illustration")  %>
   </div>
-<% end %>
+<%# end %>
 
 <%= link_to "My residents", residents_path, class: "button-primary-2care" %>
-
