@@ -2,6 +2,24 @@
   <h1 class="page-title">Reports</h1>
 </div>
 
+<!-- Add a form for date range input with datepicker -->
+<div class = "mb-5">
+  <%= form_with url: resident_reports_path, method: :get do %>
+    <div class = "d-flex mb-1" >
+      <div class="form-group w-50">
+        <%= label_tag 'start_date', 'Start Date:' %>
+        <%= text_field_tag 'start_date', params[:start_date], class: 'form-control', placeholder: 'YYYY-MM-DD', data: { controller: 'datepicker' } %>
+      </div>
+
+      <div class="form-group w-50">
+        <%= label_tag 'end_date', 'End Date:' %>
+        <%= text_field_tag 'end_date', params[:end_date], class: 'form-control', placeholder: 'YYYY-MM-DD', data: { controller: 'datepicker' }%>
+      </div>
+    </div>
+        <%= submit_tag 'Search', class: 'btn button-primary-2care' %>
+  <% end %>
+</div>
+
 
 
 
