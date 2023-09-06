@@ -1,5 +1,6 @@
-<div>
+<div class="d-flex flex-row justify-content-between">
   <h1 class="page-title">Dashboard</h1>
+  <p class="blue-text" style="margin-top: 6.5vh"><%= Time.now.strftime("%Y-%d-%m")%></p>
 </div>
 
 <%= link_to residents_path do %>
@@ -12,39 +13,62 @@
   </div>
 <% end %>
 
-<h3 class="blue-text">Yesterday's average results:</h3>
+<h3 class="blue-text">Satisfaction levels:</h3>
+
+  <% @reports = Report.all %>
+  <% reports_sent = @reports.select { |report| report.send_status == true } %>
+
+  <% green_options = 0 %>
+  <% yellow_options = 0 %>
+  <% red_options = 0 %>
+
+<% if Report.count == 0 %>
+  <% green_options = 0 %>
+  <% yellow_options = 0 %>
+  <% red_options = 0 %>
+<% else %>
+  <% Report.all.each do |report| %>
+    <% report.report_categories.each do |category| %>
+      <% if category.option.name == "good" || category.option.name == "all" %>
+        <% green_options += 1 %>
+      <% elsif category.option.name == "medium" || category.option.name == "partial" %>
+        <% yellow_options += 1 %>
+      <% elsif category.option.name == "bad" || category.option.name == "low" || category.option.name == "high" || category.option.name == "none" %>
+        <% red_options += 1 %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
 
 <div class="d-flex flex-row gap-3 align-items-center mb-3">
-  <div class="white-button d-flex flex-row align-items-center justify-content-around profile-card-info flex-grow-1 card-info-green">
-    <h4>0/<%= Resident.count %></h4>
+  <div class="white-button d-flex flex-row align-items-center justify-content-evenly profile-card-info flex-grow-1 card-info-green">
+    <h4><%= green_options %></h4>
     <i class="fa-regular fa-face-smile big-icon"></i>
   </div>
-    <div class="white-button d-flex flex-row align-items-center justify-content-around profile-card-info flex-grow-1 card-info-yellow">
-    <h4>0/<%= Resident.count %></h4>
+    <div class="white-button d-flex flex-row align-items-center justify-content-evenly profile-card-info flex-grow-1 card-info-yellow">
+    <h4><%= yellow_options %></h4>
     <i class="fa-regular fa-face-meh big-icon"></i>
   </div>
-  <div class="white-button d-flex flex-row align-items-center justify-content-around profile-card-info flex-grow-1 card-info-red">
-    <h4>0/<%= Resident.count %></h4>
+  <div class="white-button d-flex flex-row align-items-center justify-content-evenly profile-card-info flex-grow-1 card-info-red">
+    <h4><%= red_options %></h4>
     <i class="fa-regular fa-face-frown big-icon"></i>
   </div>
 </div>
 
-<h3 class="blue-text">Today: </h3>
+<%# <h3 class="blue-text">Today: </h3> %>
 
 <%#= link_to residents_path do %>
   <div class="d-flex justify-content-around profile-card p-3 mb-3 align-items-center">
     <div class="d-flex flex-column align-items-center profile-card-info">
       <h5>Reports sent</h5>
 
-      <% @reports = Report.all %>
-      <% reports_sent = @reports.select { |report| report.send_status == true } %>
 
       <h1>
       <% if reports_sent.count > Resident.count %>
         <%= Resident.count %>
       <% else %>
         <%= reports_sent.count %>
-      <% end %>/<%= Resident.count %>
+      <% end %>/ <%= Resident.count %>
       </h1>
 
     </div>
@@ -53,5 +77,3 @@
 <%# end %>
 
 <%= link_to "My residents", residents_path, class: "button-primary-2care" %>
-
-<% raise %>
