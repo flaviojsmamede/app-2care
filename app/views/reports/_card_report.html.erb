@@ -1,20 +1,16 @@
 <% @report.report_categories.each do |report_category| %>
-    <% category_option = report_category.category.options %>
-    <% case  report_category.option.name %>
-      <% when category_option.first.name %>
-        <div class="d-flex justify-content-between align-items-center report-border mb-2 option-1 mx-auto">
-          <h2><%= link_to report_category.category.name, report_report_category_path(@report, report_category), class:"option-1" %></h2>
-          <h2><i class="fa-regular fa-face-smile option-1"></i></h2>
-        </div>
-      <% when category_option.second.name %>
-        <div class="d-flex justify-content-between align-items-center report-border mb-2 option-2 mx-auto">
-          <h2><%= link_to report_category.category.name, report_report_category_path(@report, report_category), class:"option-2" %></h2>
-          <h2><i class="fa-regular fa-face-meh option-2"></i></h2>
-        </div>
-      <% when category_option.third.name %>
-        <div class="d-flex justify-content-between align-items-center report-border mb-2 option-3 mx-auto">
-          <h2><%= link_to report_category.category.name, report_report_category_path(@report, report_category), class:"option-3" %></h2>
-          <h2><i class="fa-regular fa-face-frown option-3"></i></h2>
-        </div>
-    <% end %>
+    <div class="option-wrapper d-flex align-items-center justify-content-center">
+      <% category_option = report_category.category.options %>
+      <% case  report_category.option.name %>
+        <% when category_option.first.name %>
+          <h2 class="option-0"><%= report_category.category.name %></h2>
+          <i class="fa-regular fa-face-smile success"></i>
+        <% when category_option.second.name %>
+            <h2 class="option-1"><%= report_category.category.name %></h2>
+          <i class="fa-regular fa-face-meh info"></i>
+        <% when category_option.third.name %>
+          <h2 class="option-2"><%= report_category.category.name %></h2>
+          <i class="fa-regular fa-face-frown danger"></i>
+      <% end %>
+    </div>
 <% end %>
