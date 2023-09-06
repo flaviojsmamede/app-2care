@@ -7,23 +7,23 @@
           <div class="category-icon">
             <%= category.icon.html_safe %>
           </div>
-          <%= simple_form_for [@report, @report_category], html: { report_target: "form" } do |f| %>
+          <%= simple_form_for [@report, @report_category], html: { report_target: "form" }, data: { controller: "options", options_url_value:"qualquer coisa" } do |f| %>
             <% category.options.each_with_index do |option, option_index| %>
-              <div class="option-wrapper option-<%= option_index %> d-flex align-items-center justify-content-center">
-                <fieldset class="mb-3 radio_buttons optional report_category_option_id">
-                  <input class="form-check-input radio_buttons optional" type="radio" value="<%= option.id %>" name="report_category[option_id]" id="report_category_option_id_<%= option.id %>">
-                  <label class="option collection_radio_buttons d-flex gap-3" for="report_category_option_id_<%= option.id %>">
-                    <%= option.name %>
-                    <% case option %>
-                    <% when category.options[0]%>
-                      <h2><i class="fa-regular fa-face-smile success"></i></h2>
-                    <% when  category.options[1]%>
-                      <h2><i class="fa-regular fa-face-meh info"></i></h2>
-                    <% when  category.options[2]%>
-                      <h2><i class="fa-regular fa-face-frown danger"></i></h2>
-                    <% end %>
+              <div class="option-wrapper option-<%= option_index %> mb-3" data-options-target="optionBtn<%= option_index%>" data-index="option-<%= option_index%>-selected" data-action="click->options#select">
+                <fieldset class="mb-3 radio_buttons optional report_category_option_id" >
+                  <input class="form-check-input radio_buttons optional d-none" type="radio" value="<%= option.id %>" name="report_category[option_id]" id="report_category_option_id_<%= option.id %>" data-options-target="selectBtn" >
+                  <label class="option collection_radio_buttons" for="report_category_option_id_<%= option.id %>">
+                    <h2><%= option.name.capitalize %></h2>
                   </label>
                 </fieldset>
+                <% case option %>
+                <% when category.options[0]%>
+                  <i class="fa-regular fa-face-smile success"></i>
+                <% when  category.options[1]%>
+                  <i class="fa-regular fa-face-meh info"></i>
+                <% when  category.options[2]%>
+                  <i class="fa-regular fa-face-frown danger"></i>
+                <% end %>
               </div>
             <% end %>
 
