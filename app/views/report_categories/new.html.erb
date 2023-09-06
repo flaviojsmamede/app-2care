@@ -4,7 +4,9 @@
       <div class="carousel-item <%= index == 0 ? 'active' : '' %>" data-report-target="formCarouselItem">
         <div class=" mx-auto w-75">
           <h1 class="page-title text-center"><%= category.name.capitalize %></h1>
-          <%= category.icon.html_safe %>
+          <div class="category-icon">
+            <%= category.icon.html_safe %>
+          </div>
           <%= simple_form_for [@report, @report_category], html: { report_target: "form" } do |f| %>
             <% category.options.each_with_index do |option, option_index| %>
               <div class="option-wrapper option-<%= option_index %> d-flex align-items-center justify-content-center">

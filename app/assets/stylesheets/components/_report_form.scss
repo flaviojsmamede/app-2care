@@ -21,7 +21,7 @@
 
 .option-wrapper {
   display: flex;
-  width: 240px;
+  width: 100%;
   height: 60px;
   padding: 15px 20px;
   justify-content: space-between;
@@ -89,7 +89,7 @@
 }
 
 
-.carousel-inner i{
+.category-icon{
   color: $blue-2;
   opacity: 0.5;
   font-size: 60px;
