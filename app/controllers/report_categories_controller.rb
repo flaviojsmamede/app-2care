@@ -21,9 +21,9 @@ class ReportCategoriesController < ApplicationController
     @report_category.report = @report
     @report_category.save
 
-    if Category.last == @report_category.category
-      redirect_to report_path(@report)
-    end
+    return unless Category.last == @report_category.category
+
+    redirect_to report_path(@report)
   end
 
   # def update
