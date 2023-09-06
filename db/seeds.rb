@@ -66,6 +66,88 @@ option22 = Option.create(name: "bad", category: category7)
 
 puts "Categories created!"
 
+############
+
+# Create the "Antonio" family member outside of the loop
+antonio = FamilyMember.create(
+  first_name: "Antonio",
+  last_name: "Quaresma",
+  phone_number: "966666666",
+  email: "tozequa@gmail.com",
+  address: "Rua da Alegria, 123",
+  relationship: "son",
+  photography: "residents/antonio.png"
+)
+
+names = [
+  "Pedro Agostinho",
+  "Miguel Figueiredo",
+  "Chiara Biasi",
+  "Henrique Albuquerque",
+  "Gabriel Fernandes",
+  "Andre Marques",
+  "André Pires",
+  "Camila Henriquez",
+  "David Carmo",
+  "Filipa Merino",
+  "Francisco Serralheiro",
+  "Isabelle Ferrier",
+  "Joao Sanches",
+  "Magarida Toureiro",
+  "Rita Laia",
+  "Samuel Ven"
+]
+
+clinical_info = [
+  "Hypertension",
+  "Arthritis",
+  "Diabetes",
+  "Osteoporosis",
+  "Alzheimer",
+  "Asthma",
+  "Allergies",
+  "Deaf",
+  "Heart Disease",
+  "Blind",
+  "Kidney Disease",
+  "Parkinson's",
+  "Healthy",
+  "Arthritis",
+  "Insomnia",
+  "Migraine"
+]
+
+names.each_with_index do |full_name, i|
+  first_name, last_name = full_name.split(" ")
+
+  # Generate unique email and password for each iteration
+  email = "user#{i + 1}@example.com"
+  password = "password#{i + 1}"
+
+  # Create a care taker user
+  care_taker = User.create(
+    email: email,
+    password: password,
+    first_name: "User",
+    last_name: "#{i + 1}",
+    role: "care taker"
+  )
+
+  # Create a resident associated with the care taker and the "Antonio" family member
+  resident = Resident.create(
+    user_id: care_taker.id,
+    first_name: first_name,
+    last_name: last_name,
+    birth_date: "01/01/19#{i + 80}",
+    clinical_info: clinical_info[i],
+    photography: "residents/#{first_name.downcase}.png"
+  )
+
+  # Associate the "Antonio" family member with the resident
+  resident.family_members << antonio
+end
+
+
 care_taker1 = User.create(email: "flavio@gmail.com", password: "123456", first_name: "flavio", last_name: "mamede", role: "care taker")
 resident1 = Resident.create(user_id: care_taker1.id, first_name: "nuno", last_name: "cassandra", birth_date: "15/04/1963", clinical_info: "Insomnia", photography: "residents/nuno.png")
 # report1 = Report.create(resident_id: resident1.id)
