@@ -16,8 +16,6 @@ export default class extends Controller {
 
   initSweetalert(event) {
     event.preventDefault(); // Prevent the form to be submited after the submit button has been clicked
-    event.target.setAttribute("disabled", "")
-    event.target.innerText = "Report sent!"
 
     if (this.submitValue === "true") {
       const url = this.element.parentNode.action
@@ -49,11 +47,13 @@ export default class extends Controller {
         if (action.isConfirmed) {
           window.location.href = this.urlValue;
           event.target[event.type]();
-        }
-        })
-          event.target[event.type]()
         }})
-        .catch(event.preventDefault())
+      .catch(event.preventDefault())
 
-      }
+    if (this.iconValue !== "warning") {
+      event.target.setAttribute("disabled", "")
+      event.target.innerText = "Report sent!"
+    }
+  }
+
 }
