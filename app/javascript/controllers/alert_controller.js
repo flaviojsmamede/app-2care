@@ -9,11 +9,14 @@ export default class extends Controller {
     showConfirmButton: String,
     showCancelButton: String,
     cancelButtonText: String,
-    confirmButtonText: String
+    confirmButtonText: String,
+    url: String
   }
 
   initSweetalert(event) {
     event.preventDefault(); // Prevent the form to be submited after the submit button has been clicked
+    event.target.setAttribute("disabled", "")
+    event.target.innerText = "Report sent!"
     Swal.fire({
       position: 'middle',
       icon: this.iconValue,
@@ -32,6 +35,7 @@ export default class extends Controller {
       }
     }).then((action) => {
         if (action.isConfirmed) {
+          window.location.href = this.urlValue;
           event.target[event.type]();
         }
         })
