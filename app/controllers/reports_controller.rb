@@ -37,7 +37,7 @@ class ReportsController < ApplicationController
       ReportMailer.email_report(family_member, @report.resident, @report).deliver_now
     end
     @report.send_status = true
-    redirect_to report_path(@report), notice: "report sent"
+    @report.save
   end
 
   private
