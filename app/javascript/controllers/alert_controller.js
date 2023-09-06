@@ -10,11 +10,14 @@ export default class extends Controller {
     showCancelButton: String,
     cancelButtonText: String,
     confirmButtonText: String,
+    url: String,
     submit: String
   }
 
   initSweetalert(event) {
     event.preventDefault(); // Prevent the form to be submited after the submit button has been clicked
+    event.target.setAttribute("disabled", "")
+    event.target.innerText = "Report sent!"
 
     if (this.submitValue === "true") {
       const url = this.element.parentNode.action
@@ -44,6 +47,10 @@ export default class extends Controller {
     })
       .then((action) => {
         if (action.isConfirmed) {
+          window.location.href = this.urlValue;
+          event.target[event.type]();
+        }
+        })
           event.target[event.type]()
         }})
         .catch(event.preventDefault())
