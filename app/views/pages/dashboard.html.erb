@@ -16,11 +16,15 @@
 
 <div class="d-flex flex-row gap-3 align-items-center mb-3">
   <div class="white-button d-flex flex-row align-items-center justify-content-around profile-card-info flex-grow-1 card-info-green">
-    <h2>0/<%= Resident.count %></h2>
+    <h4>0/<%= Resident.count %></h4>
     <i class="fa-regular fa-face-smile big-icon"></i>
   </div>
+    <div class="white-button d-flex flex-row align-items-center justify-content-around profile-card-info flex-grow-1 card-info-yellow">
+    <h4>0/<%= Resident.count %></h4>
+    <i class="fa-regular fa-face-meh big-icon"></i>
+  </div>
   <div class="white-button d-flex flex-row align-items-center justify-content-around profile-card-info flex-grow-1 card-info-red">
-    <h2>0/<%= Resident.count %></h2>
+    <h4>0/<%= Resident.count %></h4>
     <i class="fa-regular fa-face-frown big-icon"></i>
   </div>
 </div>
@@ -49,3 +53,5 @@
 <%# end %>
 
 <%= link_to "My residents", residents_path, class: "button-primary-2care" %>
+
+<% raise %>
