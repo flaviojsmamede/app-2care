@@ -18,6 +18,7 @@
 
   <ul>
     <% @report.report_categories.each do |report_category| %>
+    
       <li>
         <h3><%= report_category.category.name.capitalize %> : <%= report_category.option.name.capitalize %></h3>
 
