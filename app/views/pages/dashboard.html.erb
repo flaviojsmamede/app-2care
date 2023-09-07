@@ -1,6 +1,6 @@
-<div class="d-flex flex-row justify-content-between">
+<div class="d-flex flex-row justify-content-between align-items-center">
   <h1 class="page-title">Dashboard</h1>
-  <p class="blue-text" style="margin-top: 6.5vh"><%= Time.now.strftime("%Y-%m-%d")%></p>
+  <p class="blue-text mt-3"><%= Time.now.strftime("%Y-%m-%d")%></p>
 </div>
 
 <%= link_to residents_path do %>
@@ -13,7 +13,7 @@
   </div>
 <% end %>
 
-<h3 class="blue-text">Satisfaction levels:</h3>
+<h3 class="blue-text mt-4">Satisfaction levels:</h3>
 
   <% @reports = Report.all %>
   <% reports_sent = @reports.select { |report| report.send_status == true } %>
