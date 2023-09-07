@@ -22,7 +22,8 @@ class FamilyMembersController < ApplicationController
 
   def destroy
     @family_member.destroy
-    redirect_to resident_family_members_path(@resident), notice: "Family Member was successfully destroyed.", status: :see_other
+    redirect_to resident_family_members_path(@resident), notice: "Family Member was successfully destroyed.",
+                                                         status: :see_other
   end
 
   private
@@ -32,6 +33,7 @@ class FamilyMembersController < ApplicationController
   end
 
   def family_member_params
-    params.require(:family_member).permit(:first_name, :last_name, :phone_number, :email, :address, :relationship, :resident_id)
+    params.require(:family_member).permit(:first_name, :last_name, :phone_number, :email, :address, :relationship,
+                                          :resident_id)
   end
 end
