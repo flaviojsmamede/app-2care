@@ -36,13 +36,13 @@
           data-controller="alert"
           data-action="click->alert#initSweetalert"
           data-alert-icon-value="warning"
-          data-alert-url-value="<%=dashboard_path%>"
+          data-alert-url-value="<%= resident_path(@report.resident_id)%>"
           data-alert-title-value="Are you sure you want to leave the report?"
           data-alert-html-value=""
           data-alert-show-confirm-button-value="true"
           data-alert-show-cancel-button-value="true"
           data-alert-cancel-button-text-value="Close"
-          data-alert-confirm-button-text-value="Yes"
+          data-alert-confirm-button-text-value="Go to Profile"
           style="z-index: 10">
       <i class="fa-solid fa-xmark"></i>
     </div>
