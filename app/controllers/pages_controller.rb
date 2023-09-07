@@ -25,5 +25,25 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @sent_reports = Report.where(send_status: true)
+
+    @averages = @sent_reports.map do |report|
+      most_frequent_option = report.options
+                                    .select("options.score")
+                                    .group(:score)
+                                    .count(:score)
+                                    .max_by do |option_score, frequency|
+                                      frequency
+                                    end
+
+      {
+        report_id: report.id,
+        most_frequent_option_score: most_frequent_option.first
+      }
+    end
+
+    @goods_count = @averages.select { |report| report[:most_frequent_option_score] == 3 }.count
+    @mediums_count = @averages.select { |report| report[:most_frequent_option_score] == 2 }.count
+    @bads_count = @averages.select { |report| report[:most_frequent_option_score] == 1 }.count
   end
 end
