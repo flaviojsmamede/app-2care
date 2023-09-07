@@ -23,7 +23,7 @@ class FamilyMembersController < ApplicationController
   def destroy
     @family_member = @resident.family_members.find(params[:id])
     @family_member.destroy
-    redirect_to resident_family_members_path(@resident), notice: "Family Member was successfully destroyed.",
+    redirect_to resident_family_members_path(@resident), notice: "Family Member was successfully destroyed!",
                                                          status: :see_other
   end
 
