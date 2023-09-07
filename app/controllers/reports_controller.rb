@@ -5,6 +5,17 @@ class ReportsController < ApplicationController
     @resident = Resident.find(params[:resident_id])
     @reports = @resident.reports
     @report = Report.new
+
+    # Retrieve start_date and end_date from form input or params
+    start_date = params[:start_date]
+    end_date = params[:end_date]
+
+    # Fetch reports within the specified date range
+    if start_date.present? && end_date.present?
+      @reports = @resident.reports.where(created_at: start_date..end_date)
+    else
+      @reports = @resident.reports
+    end
   end
 
   def show
