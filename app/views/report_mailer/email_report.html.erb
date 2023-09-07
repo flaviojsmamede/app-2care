@@ -18,15 +18,13 @@
 
   <ul>
     <% @report.report_categories.each do |report_category| %>
-        <% category_option = report_category.category.options %>
-        <% case  report_category.option.name %>
-          <% when category_option.first.name %>
-            <li><h3><%= report_category.category.name.capitalize %> : <%= report_category.option.name.capitalize %></h3></li>
-          <% when category_option.second.name %>
-            <li><h3><%= report_category.category.name.capitalize %> : <%= report_category.option.name.capitalize %></h3></li>
-          <% when category_option.third.name %>
-            <li><h3><%= report_category.category.name.capitalize %> : <%= report_category.option.name.capitalize %></h3></li>
+      <li>
+        <h3><%= report_category.category.name.capitalize %> : <%= report_category.option.name.capitalize %></h3>
+
+        <% if report_category.additional_informations.present? %>
+          <p><%= report_category.additional_informations %></p>
         <% end %>
+      </li>
     <% end %>
   </ul>
 </body>

@@ -26,45 +26,45 @@ puts "Creating new DB..."
 
 category1 = Category.create(name: "sleep", icon: "<i class='fa-solid fa-moon'></i>")
 
-option1 = Option.create(name: "good", category: category1)
-option2 = Option.create(name: "medium", category: category1)
-option3 = Option.create(name: "bad", category: category1)
+option1 = Option.create(name: "good", category: category1, score: 3)
+option2 = Option.create(name: "medium", category: category1, score: 2)
+option3 = Option.create(name: "bad", category: category1, score: 1)
 
 category2 = Category.create(name: "eat", icon: "<i class='fa-solid fa-utensils'></i>")
 
-option4 = Option.create(name: "good", category: category2)
-option5 = Option.create(name: "medium", category: category2)
-option6 = Option.create(name: "bad", category: category2)
+option4 = Option.create(name: "good", category: category2, score: 3)
+option5 = Option.create(name: "medium", category: category2, score: 2)
+option6 = Option.create(name: "bad", category: category2, score: 1)
 
 category3 = Category.create(name: "humour", icon: "<i class='fa-solid fa-masks-theater'></i>")
 
-option7 = Option.create(name: "good", category: category3)
-option8 = Option.create(name: "medium", category: category3)
-option9 = Option.create(name: "bad", category: category3)
+option7 = Option.create(name: "good", category: category3, score: 3)
+option8 = Option.create(name: "medium", category: category3, score: 2)
+option9 = Option.create(name: "bad", category: category3, score: 1)
 
 category4 = Category.create(name: "activities", icon: "<i class='fa-solid fa-person-running'></i>")
 
-option10 = Option.create(name: "good", category: category4)
-option11 = Option.create(name: "medium", category: category4)
-option12 = Option.create(name: "bad", category: category4)
+option10 = Option.create(name: "good", category: category4, score: 3)
+option11 = Option.create(name: "medium", category: category4, score: 2)
+option12 = Option.create(name: "bad", category: category4, score: 1)
 
 category5 = Category.create(name: "blood pressure", icon: "<i class='fa-solid fa-heart'></i>")
 
-option14 = Option.create(name: "high", category: category5)
-option15 = Option.create(name: "good", category: category5)
-option16 = Option.create(name: "low", category: category5)
+option14 = Option.create(name: "high", category: category5, score: 3)
+option15 = Option.create(name: "good", category: category5, score: 2)
+option16 = Option.create(name: "low", category: category5, score: 1)
 
 category6 = Category.create(name: "medication", icon: "<i class='fa-solid fa-pills'></i>")
 
-option17 = Option.create(name: "all", category: category6)
-option18 = Option.create(name: "partial", category: category6)
-option19 = Option.create(name: "none", category: category6)
+option17 = Option.create(name: "all", category: category6, score: 3)
+option18 = Option.create(name: "partial", category: category6, score: 2)
+option19 = Option.create(name: "none", category: category6, score: 1)
 
 category7 = Category.create(name: "hygiene", icon: "<i class='fa-solid fa-shower'></i>")
 
-option20 = Option.create(name: "good", category: category7)
-option21 = Option.create(name: "medium", category: category7)
-option22 = Option.create(name: "bad", category: category7)
+option20 = Option.create(name: "good", category: category7, score: 3)
+option21 = Option.create(name: "medium", category: category7, score: 2)
+option22 = Option.create(name: "bad", category: category7, score: 1)
 
 puts "Categories created!"
 
