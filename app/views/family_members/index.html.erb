@@ -1,11 +1,16 @@
-<div class= "d-flex justify-content-between align-items-baseline">
-  <h1 class="page-title">Contacts</h1>
-  <div class="page-title">
-    <%= link_to "#" do %>
-      <i class="fa-solid fa-plus d-none"></i>
-    <% end %>
+<div data-controller="toggle-items">
+  <div class= "d-flex justify-content-between align-items-baseline" >
+    <h1 class="page-title">Contacts</h1>
+    <div class="page-title">
+        <button data-toggle-items-target="addIcon"><i class="fa-solid fa-plus" data-action="click->toggle-items#displayForm"></i></button>
+    </div>
+  </div>
+  <div data-toggle-items-target="addForm" class="m-5 d-none">
+    <%= render "form", resident: @resident %>
   </div>
 </div>
+
+
 
 <% if @family_members.count == 0 %>
 

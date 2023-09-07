@@ -1,0 +1,18 @@
+<%= simple_form_for [@resident, @family_member], url: resident_family_members_path(@resident), method: :post do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :first_name, label: "First Name" %>
+    <%= f.input :last_name, label: "Last Name" %>
+    <%= f.input :phone_number, label: "Phone Number" %>
+    <%= f.input :email, label: "Email" %>
+    <%= f.input :address, label: "Address" %>
+    <%= f.input :relationship, label: "Relationship" %>
+    <%= f.input :photography, label: "Photography" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Add Family Member", class: "btn button-primary-2care" %>
+  </div>
+<% end %>
