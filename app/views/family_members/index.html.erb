@@ -23,7 +23,7 @@
 
 <% else %>
 
-  <div class="row mt-5">
+  <div class="row">
     <% @family_members.each do |family_member| %>
         <%= link_to resident_family_member_path(@resident, family_member) do %>
           <div class="col mb-3">
