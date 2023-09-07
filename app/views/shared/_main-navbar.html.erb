@@ -36,18 +36,21 @@
           data-controller="alert"
           data-action="click->alert#initSweetalert"
           data-alert-icon-value="warning"
+          data-alert-url-value="<%=dashboard_path%>"
           data-alert-title-value="Are you sure you want to leave the report?"
           data-alert-html-value=""
           data-alert-show-confirm-button-value="true"
           data-alert-show-cancel-button-value="true"
           data-alert-cancel-button-text-value="Close"
-          data-alert-confirm-button-text-value="Go back" >
+          data-alert-confirm-button-text-value="Dashboard"
+          style="z-index: 10">
       <i class="fa-solid fa-xmark"></i>
     </div>
   <% else %>
     <%= link_to "#" do %>
       <div class="icon-div-right">
         <i class="fa-solid fa-xmark d-none"></i>
+
       </div>
     <% end %>
   <% end %>

@@ -2,17 +2,41 @@
     <% category_option = report_category.category.options %>
     <% case  report_category.option.name %>
       <% when category_option.first.name %>
-        <div class="option-wrapper option-0 mb-3">
+        <div class="option-wrapper option-0 mb-3"
+              data-controller="alert"
+              data-action="click->alert#initSweetalert"
+              data-alert-title-value="Information"
+              data-alert-html-value="<%= report_category.additional_informations.present? ? report_category.additional_informations : "No additional information recorded." %>"
+              data-alert-show-confirm-button-value="false"
+              data-alert-show-cancel-button-value="true"
+              data-alert-cancel-button-text-value="Close"
+              data-alert-icon-html-value="<%= report_category.category.icon %>">
           <h2><%= report_category.category.name.capitalize %></h2>
           <i class="fa-regular fa-face-smile"></i>
         </div>
       <% when category_option.second.name %>
-        <div class="option-wrapper option-1 mb-3">
+        <div class="option-wrapper option-1 mb-3"
+              data-controller="alert"
+              data-action="click->alert#initSweetalert"
+              data-alert-title-value="Information"
+              data-alert-html-value="<%= report_category.additional_informations.present? ? report_category.additional_informations : "No additional information recorded." %>"
+              data-alert-show-confirm-button-value="false"
+              data-alert-show-cancel-button-value="true"
+              data-alert-cancel-button-text-value="Close"
+              data-alert-icon-html-value="<%= report_category.category.icon %>">
           <h2><%= report_category.category.name.capitalize %></h2>
           <i class="fa-regular fa-face-meh "></i>
         </div>
       <% when category_option.third.name %>
-        <div class="option-wrapper option-2 mb-3">
+        <div class="option-wrapper option-2 mb-3"
+              data-controller="alert"
+              data-action="click->alert#initSweetalert"
+              data-alert-title-value="Information"
+              data-alert-html-value="<%= report_category.additional_informations.present? ? report_category.additional_informations : "No additional information recorded." %>"
+              data-alert-show-confirm-button-value="false"
+              data-alert-show-cancel-button-value="true"
+              data-alert-cancel-button-text-value="Close"
+              data-alert-icon-html-value="<%= report_category.category.icon %>">
           <h2><%= report_category.category.name.capitalize %></h2>
           <i class="fa-regular fa-face-frown"></i>
         </div>

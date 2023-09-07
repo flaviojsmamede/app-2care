@@ -1,14 +1,15 @@
 .swal2-cancel.swal2-cancel{
-  font-family: $body-font;
+  font-family: $body-font !important;
   color: $white !important;
   font-weight: 600 !important;
   background-color: $blue-2 !important;
   border-radius: 10px !important;
-  padding: 4%;
-  justify-content: center;
-  display: flex;
-  width: 100%;
-  box-shadow: 0px 5px 5px 0px rgba(0, 156, 170, 0.20);
+  padding: 4% !important;
+  justify-content: center !important;
+  display: flex !important;
+  width: 100% !important;
+  box-shadow: 0px 5px 5px 0px rgba(0, 156, 170, 0.20) !important;
+  padding: 12px !important;
 }
 
 .swal2-confirm.swal2-confirm {
@@ -23,6 +24,7 @@
   display: flex;
   width: 100%;
   box-shadow: 0px 5px 5px 0px rgba(0, 156, 170, 0.20);
+  padding: 12px !important;
 }
 
 .swal2-icon.swal2-warning {
@@ -33,4 +35,10 @@
 .swal2-icon.swal2-success {
   color: $blue-2 !important;
   border-color: $blue-2 !important;
+}
+
+.icon-custom-sweetalert {
+  border: none !important;
+  color: $blue-2 !important;
+  font-size: 24px !important;
 }

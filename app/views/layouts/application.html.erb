@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App2care</title>
+    <title><%= meta_title %></title>
     <%= favicon_link_tag "favicon.png", rel: "icon", type: "image/png" %>
+    <meta name="description" content="<%= meta_description %>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= request.original_url %>">
+    <meta property="og:image" content="<%= meta_image %>">
+    <meta property="og:description" content="<%= meta_description %>">
+    <meta property="og:site_name" content="<%= meta_title %>">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:title" content="<%= meta_title %>">
+    <meta name="twitter:description" content="<%= meta_description %>">
+    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:image:src" content="<%= meta_image %>">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <%= render 'shared/ios_pwa_links' %>
   </head>
 
   <body>
@@ -24,7 +49,6 @@
       <main>
         <div class="content row justify-content-center">
           <div class="col-10">
-            <%= render "shared/flashes" %>
             <%= yield %>
           </div>
         </div>

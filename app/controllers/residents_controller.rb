@@ -11,7 +11,7 @@ class ResidentsController < ApplicationController
     #   SQL
     #   @residents = Resident.where(sql_query, query: "%#{search_query}%")
     # else
-      @residents = Resident.all
+    @residents = Resident.all
     # end
   end
 

@@ -6,22 +6,26 @@
       <%= render "card_report" %>
 
       <p><%= link_to "add category", new_report_report_category_path(@report), class: "button-primary-2care btn mt-5 d-none" %></p>
-      <p><%= button_to 'Send',
+      <p><%= button_to @report.send_status ? "Report sent" : 'Send',
                         report_send_report_path(@report),
                         method: :post,
+                        disabled: @report.send_status,
                         data: {
                           controller: "alert",
                           action: "click->alert#initSweetalert",
+                          alert_submit_value: "true",
                           alert_icon_value: "success",
                           alert_title_value: "Report sent!",
+                          alert_url_value: dashboard_path,
                           alert_html_value: "The report was saved and sent to the family!",
                           alert_show_confirm_button_value: "true",
                           alert_show_cancel_button_value: "true",
                           alert_cancel_button_text_value: "Close",
-                          alert_confirm_button_text_value: "See report",
+                          alert_confirm_button_text_value: "See report"
                         },
-                        class: "btn button-primary-2care" %></p>
+                        class: "btn button-primary-2care" %>
+      </p>
+
     </div>
   </div>
 </div>
-
