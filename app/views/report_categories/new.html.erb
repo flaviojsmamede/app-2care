@@ -7,10 +7,10 @@
           <div class="category-icon">
             <%= category.icon.html_safe %>
           </div>
-          <%= simple_form_for [@report, @report_category], html: { report_target: "form" }, data: { controller: "options", options_url_value:"qualquer coisa" } do |f| %>
+          <%= simple_form_for [@report, @report_category], html: { report_target: "form" }, data: { controller: "options" } do |f| %>
             <% category.options.each_with_index do |option, option_index| %>
               <div class="option-wrapper option-<%= option_index %> mb-3" data-options-target="optionBtn<%= option_index%>" data-index="option-<%= option_index%>-selected" data-action="click->options#select">
-                <fieldset class="mb-3 radio_buttons optional report_category_option_id" >
+                <fieldset class="mb-3 radio_buttons optional report_category_option_id" data-options-target="fieldset">
                   <input class="form-check-input radio_buttons optional d-none" type="radio" value="<%= option.id %>" name="report_category[option_id]" id="report_category_option_id_<%= option.id %>" data-options-target="selectBtn" >
                   <label class="option collection_radio_buttons" for="report_category_option_id_<%= option.id %>">
                     <h2><%= option.name.capitalize %></h2>
