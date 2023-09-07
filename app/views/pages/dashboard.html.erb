@@ -15,42 +15,17 @@
 
 <h3 class="blue-text">Satisfaction levels:</h3>
 
-  <% @reports = Report.all %>
-  <% reports_sent = @reports.select { |report| report.send_status == true } %>
-
-  <% green_options = 0 %>
-  <% yellow_options = 0 %>
-  <% red_options = 0 %>
-
-<% if Report.count == 0 %>
-  <% green_options = 0 %>
-  <% yellow_options = 0 %>
-  <% red_options = 0 %>
-<% else %>
-  <% Report.all.each do |report| %>
-    <% report.report_categories.each do |category| %>
-      <% if category.option.name == "good" || category.option.name == "all" %>
-        <% green_options += 1 %>
-      <% elsif category.option.name == "medium" || category.option.name == "partial" %>
-        <% yellow_options += 1 %>
-      <% elsif category.option.name == "bad" || category.option.name == "low" || category.option.name == "high" || category.option.name == "none" %>
-        <% red_options += 1 %>
-      <% end %>
-    <% end %>
-  <% end %>
-<% end %>
-
 <div class="d-flex flex-row gap-3 align-items-center mb-3">
   <div class="white-button d-flex flex-row align-items-center justify-content-evenly profile-card-info flex-grow-1 card-info-green">
-    <h4><%= green_options %></h4>
+    <h4><%= @goods_count %></h4>
     <i class="fa-regular fa-face-smile big-icon"></i>
   </div>
     <div class="white-button d-flex flex-row align-items-center justify-content-evenly profile-card-info flex-grow-1 card-info-yellow">
-    <h4><%= yellow_options %></h4>
+    <h4><%= @mediums_count %></h4>
     <i class="fa-regular fa-face-meh big-icon"></i>
   </div>
   <div class="white-button d-flex flex-row align-items-center justify-content-evenly profile-card-info flex-grow-1 card-info-red">
-    <h4><%= red_options %></h4>
+    <h4><%= @bads_count %></h4>
     <i class="fa-regular fa-face-frown big-icon"></i>
   </div>
 </div>
@@ -64,10 +39,10 @@
 
 
       <h1>
-      <% if reports_sent.count > Resident.count %>
+      <% if @sent_reports.count > Resident.count %>
         <%= Resident.count %>
       <% else %>
-        <%= reports_sent.count %>
+        <%= @sent_reports.count %>
       <% end %>/ <%= Resident.count %>
       </h1>
 
