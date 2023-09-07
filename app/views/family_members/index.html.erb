@@ -5,7 +5,7 @@
         <button data-toggle-items-target="addIcon"><i class="fa-solid fa-plus" data-action="click->toggle-items#displayForm"></i></button>
     </div>
   </div>
-  <div data-toggle-items-target="addForm" class="m-5 d-none">
+  <div data-toggle-items-target="addForm" class="m-2 d-none">
     <%= render "form", resident: @resident %>
   </div>
 </div>
@@ -23,7 +23,7 @@
 
 <% else %>
 
-  <div class="row">
+  <div class="row mt-5">
     <% @family_members.each do |family_member| %>
         <%= link_to resident_family_member_path(@resident, family_member) do %>
           <div class="col mb-3">

@@ -1,16 +1,41 @@
 <%= simple_form_for [@resident, @family_member], url: resident_family_members_path(@resident), method: :post do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<div class= "row d-flex flex-row">
+  <div class="col">
+    <div class="form-inputs">
+      <div class="d-flex flex-row justify-content-between mb-2 gap-3">
+        <div class="flex-grow-1">
+          <%= f.input :first_name, label: "First Name", input_html: { class: "white-button" } %>
+        </div>
+        <div class="flex-grow-1">
+          <%= f.input :last_name, label: "Last Name", input_html: { class: "white-button" } %>
+        </div>
+      </div>
 
-  <div class="form-inputs">
-    <%= f.input :first_name, label: "First Name" %>
-    <%= f.input :last_name, label: "Last Name" %>
-    <%= f.input :phone_number, label: "Phone Number" %>
-    <%= f.input :email, label: "Email" %>
-    <%= f.input :address, label: "Address" %>
-    <%= f.input :relationship, label: "Relationship" %>
-    <%= f.input :photography, label: "Photography" %>
+      <div class="d-flex flex-row justify-content-between mb-2 gap-3">
+        <div class="flex-grow-1">
+          <%= f.input :phone_number, label: "Phone Number", input_html: { class: "white-button" } %>
+        </div>
+        <div class="flex-grow-1">
+          <%= f.input :email, label: "Email", input_html: { class: "white-button" } %>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row justify-content-between mb-2 gap-3">
+        <div class="flex-grow-1">
+          <%= f.input :address, label: "Address", input_html: { class: "white-button" } %>
+        </div>
+        <div class="flex-grow-1">
+          <%= f.input :relationship, label: "Relationship", input_html: { class: "white-button" } %>
+        </div>
+      </div>
+
+      <%# <%= f.input :photography, label: "Photo", input_html: { class: "white-button" } %> 
+
+    </div>
   </div>
+</div>
 
   <div class="form-actions">
     <%= f.submit "Add Family Member", class: "btn button-primary-2care" %>
