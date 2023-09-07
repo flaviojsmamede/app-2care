@@ -42,7 +42,6 @@ main {
   margin-top: 100px; /* Adjust this value to match the header height */
   margin-bottom: 60px; /* Adjust this value to match the footer height */
   overflow-y: scroll;
-  height: calc(100vh - 160px); /* Adjust this value based on header and footer height */
 }
 
 /* Style the content within the main area */
