@@ -61,3 +61,10 @@
 a {
   text-decoration: none;
 }
+
+.email-family-member {
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre-wrap;
+}

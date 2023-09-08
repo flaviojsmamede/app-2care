@@ -7,6 +7,12 @@
     color: blue;
     } */
   }
+
+  .rounded-circle {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
 </style>
 
 <body>
@@ -16,14 +22,24 @@
 
   <h4>Daily Report 📑: <%= @report.created_at.strftime('%e') + @report.created_at.strftime('th %B %Y') %></h4>
 
-  <ul>
+  <ul style="list-style: none; padding-left: 12px;">
     <% @report.report_categories.each do |report_category| %>
-    
+
       <li>
-        <h3><%= report_category.category.name.capitalize %> : <%= report_category.option.name.capitalize %></h3>
+        <h4 style="margin-bottom: 0px;">
+          <% if report_category.option.score == 3 %>
+            <% option_color = "🟢" %>
+          <% elsif report_category.option.score == 2 %>
+            <% option_color = "🟡" %>
+          <% elsif %>
+            <% option_color = "🔴" %>
+          <% end %>
+
+          <%= option_color %> <%= report_category.category.name.capitalize %><span style="font-weight: normal">: <%= report_category.option.name.capitalize %></span>
+        </h4>
 
         <% if report_category.additional_informations.present? %>
-          <p><%= report_category.additional_informations %></p>
+          <p style="padding-left: 24px; margin-top: 0px;"><%= report_category.additional_informations %></p>
         <% end %>
       </li>
     <% end %>
