@@ -20,7 +20,6 @@
 .profile-card h3 {
   font-size: 20px;
   font-weight: bold;
-  margin: 10px;
   opacity: 0.8;
 }
 
@@ -32,7 +31,7 @@
 
 .blue-text {
   color: $blue-2;
-  font-size: 18px;
+  font-size: 16px;
   font-family: $body-font;
 }
 
@@ -44,6 +43,13 @@
 
 .profile-card .profile-card-infos {
   text-align: center;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 2%;
+  margin-right: 4%;
+}
+
+.clinical-info {
+  max-width: 90px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
