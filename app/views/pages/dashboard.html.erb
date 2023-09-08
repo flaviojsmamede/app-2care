@@ -38,13 +38,7 @@
       <h5>Reports sent</h5>
 
 
-      <h1>
-      <% if @sent_reports.count > Resident.count %>
-        <%= Resident.count %>
-      <% else %>
-        <%= @sent_reports.count %>
-      <% end %>/ <%= Resident.count %>
-      </h1>
+      <h1><%= @sent_reports.count %> / <%= Resident.count %></h1>
 
     </div>
     <%= image_tag("reports-illustration.png", alt: "reports illustration")  %>

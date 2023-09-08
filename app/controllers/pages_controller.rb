@@ -25,7 +25,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @sent_reports = Report.where(send_status: true)
+    @sent_reports = Report.where(send_status: true, created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
 
     @averages = @sent_reports.map do |report|
       most_frequent_option = report.options
